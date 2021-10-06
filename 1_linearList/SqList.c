@@ -45,8 +45,22 @@ void PrintList(SqList * list) {
   }
 
   for (int i = 0; i < list->length; i ++) { // 这里 i 指数组下标
-    printf("位序：%d => %d\n", i + 1, list->data[i]);
+    printf("%d\n", list->data[i]);
   }
+}
+
+bool DeleteList(SqList * list, int idx, int * resNum) {
+  if (idx < 1 || idx > list->length) {
+    return false;
+  }
+
+  *resNum = list->data[idx - 1];
+
+  for (int i = idx; i < list->length; i ++) {
+    list->data[i - 1] = list->data[i];
+  }
+  (list->length)--;
+  return true;
 }
 
 int main() {
@@ -58,6 +72,15 @@ int main() {
     InsertList(&list, i, i + 100);
   }
   PrintList(&list);
+
+  printf("--------------\n");
+
+  // 删除位序为 3 的结点( 用 resNum 接被删结点的数据 )
+  int resNum = -1;
+  if (DeleteList(&list, 3, &resNum)) {
+    PrintList(&list);
+  }
+  printf("被删结点存储的数据为：%d\n", resNum);
 
   return 0;
 }
