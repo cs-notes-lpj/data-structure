@@ -71,9 +71,22 @@ int GetItem(SqList list, int idx) {
   return list.data[idx - 1];
 }
 
+int LocateElem(SqList list, int elem) {
+
+  for (int i = 0; i < list.length; i ++) { // 这里 i 指数组下标
+    if (list.data[i] == elem) {
+      return i + 1;
+    }
+  }
+
+  return -1; // 这里将 -1 定义为没找到
+
+}
+
 int main() {
   SqList list;
   InitList(&list);
+
 
   // 插入 5 个新结点，每个结点存储的数据为( 位序 + 100 )
   for (int i = 1; i < 6; i ++) {
@@ -81,19 +94,26 @@ int main() {
   }
   PrintList(&list);
 
-  printf("--------------\n");
 
   // 删除位序为 3 的结点( 用 resNum 接被删结点的数据 )
+  printf("--------------\n");
   int resNum = -1;
   if (DeleteList(&list, 3, &resNum)) {
     PrintList(&list);
   }
   printf("被删结点存储的数据为：%d\n", resNum);
 
-  printf("--------------\n");
 
   // 查找位序为 2 的结点，返回其存储的数据
+  printf("--------------\n");
   printf("%d\n", GetItem(list, 2));
+
+
+  // 查找存储数据为 104 的结点，返回其位序
+  printf("--------------\n");
+  int tmp = 102;
+  printf("%d 位续 => %d\n", tmp, LocateElem(list, tmp));
+
 
   return 0;
 }
