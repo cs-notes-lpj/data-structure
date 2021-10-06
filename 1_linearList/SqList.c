@@ -63,6 +63,14 @@ bool DeleteList(SqList * list, int idx, int * resNum) {
   return true;
 }
 
+int GetItem(SqList list, int idx) {
+  if (idx < 1 || idx > list.length) {
+    return -1; // 这里将 -1 定义为没找到
+  }
+
+  return list.data[idx - 1];
+}
+
 int main() {
   SqList list;
   InitList(&list);
@@ -81,6 +89,11 @@ int main() {
     PrintList(&list);
   }
   printf("被删结点存储的数据为：%d\n", resNum);
+
+  printf("--------------\n");
+
+  // 查找位序为 2 的结点，返回其存储的数据
+  printf("%d\n", GetItem(list, 2));
 
   return 0;
 }
