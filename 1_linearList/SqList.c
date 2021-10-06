@@ -30,7 +30,7 @@ bool InsertList(SqList * list, int idx, int elem) {
     return false;
   }
 
-  for (int i = list->length; i >= idx; i--) { // 这里 i 指位序，最小位 1
+  for (int i = list->length; i >= idx; i--) { // 这里 i 指位序，最小为 1
     list->data[i] = list->data[i - 1];
   }
 
@@ -53,10 +53,11 @@ int main() {
   SqList list;
   InitList(&list);
 
-  // 在位序为 1 的地方插入新结点，存储数据 123
-  if (InsertList(&list, 1, 123)) {
-    PrintList(&list);
+  // 插入 5 个新结点，每个结点存储的数据为( 位序 + 100 )
+  for (int i = 1; i < 6; i ++) {
+    InsertList(&list, i, i + 100);
   }
+  PrintList(&list);
 
   return 0;
 }
