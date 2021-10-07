@@ -66,6 +66,33 @@ void PrintList(SqList list) {
   }
 }
 
+bool IncreaseSize(SqList * list, int growth) {
+
+  int newSize = list->curSize + growth;
+
+  int * tmp = (int *)malloc(sizeof(int) * (newSize));
+  if (tmp == NULL) {
+    return false;
+  }
+
+  int * oldData = list->dataPtr;
+
+  list->dataPtr = tmp;
+  list->curSize = newSize;
+  for (int i = 0; i < list->curSize; i ++) {
+    list->dataPtr[i] = 0;
+  }
+
+  for (int i = 0; i < list->length; i ++) {
+    list->dataPtr[i] = oldData[i];
+  }
+
+  free(oldData);
+
+  return true;
+
+}
+
 int main() {
 
   SqList list;
@@ -78,12 +105,30 @@ int main() {
   }
   PrintList(list);
 
-  int newElem = 999;
-  if (InsertList(&list, 3, newElem)) {
+
+  // 新结点将要存储的数据元素，和将要插入的位序
+  int newElem = 999, idx = 3;
+  if (InsertList(&list, idx, newElem)) {
     PrintList(list);
   } else {
-    printf("插入 %d 失败，因顺序表满，正尝试扩容并插入...", newElem);
-    
+
+    printf("插入 %d 失败，因顺序表满，正尝试扩容并插入...\n", newElem);
+
+    // 尝试将容量增至自身当前容量的 2 倍
+    if (IncreaseSize(&list, list.curSize)) {
+
+      // 扩容成功，再尝试插入新结点，插入成功则打印输出
+      if (InsertList(&list, idx, newElem)) {
+        printf("成功将 %d 插入到位序 %d\n", newElem, idx);
+        PrintList(list);
+      } else {
+        printf("扩容成功，但 %d 插入位序 %d 失败...\n", newElem, idx);
+      }
+
+    } else {
+      printf("扩容失败...\n");
+    }
+
   }
 
   return 0;
