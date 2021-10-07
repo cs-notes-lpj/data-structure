@@ -21,6 +21,7 @@ SqList * InitList(SqList * list) {
   return list;
 }
 
+// 按位序插入新结点
 bool InsertList(SqList * list, int idx, int elem) {
   if (list->length == maxSize) {
     return false;
@@ -39,13 +40,13 @@ bool InsertList(SqList * list, int idx, int elem) {
   return true;
 }
 
-void PrintList(SqList * list) {
-  if (list->length == 0) {
+void PrintList(SqList list) {
+  if (list.length == 0) {
     return;
   }
 
-  for (int i = 0; i < list->length; i ++) { // 这里 i 指数组下标
-    printf("%d\n", list->data[i]);
+  for (int i = 0; i < list.length; i ++) { // 这里 i 指数组下标
+    printf("%d\n", list.data[i]);
   }
 }
 
@@ -92,14 +93,14 @@ int main() {
   for (int i = 1; i < 6; i ++) {
     InsertList(&list, i, i + 100);
   }
-  PrintList(&list);
+  PrintList(list);
 
 
   // 删除位序为 3 的结点( 用 resNum 接被删结点的数据 )
   printf("--------------\n");
   int resNum = -1;
   if (DeleteList(&list, 3, &resNum)) {
-    PrintList(&list);
+    PrintList(list);
   }
   printf("被删结点存储的数据为：%d\n", resNum);
 
