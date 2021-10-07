@@ -5,3 +5,48 @@
 [C 语言入门教程 - 阮一峰](https://wangdoc.com/clang/)
 
 [linux 上搭建 C/C++ 开发环境](https://brannua.github.io/2021/10/04/%E7%A7%91%E6%99%AE%E4%B8%8E%E5%AE%9E%E8%B7%B5/vscode_cmake_cppdev_linux/)
+
+#### 思考与注意事项
+
+> C 语言没有布尔类型的变量
+
+![](https://gitee.com/pj-l/imgs-1/raw/master/screenShot/image-20210922213613501.png)
+
+> 结构体的定义中不允许赋初始值
+
+- 因为一个结构体的定义就相当于是在定义一种新的数据类型
+
+> 无论如何看见野指针赶紧置 NULL
+
+- 避免野指针
+
+> 无论如何看见新开辟的内存空间（比如用 malloc 申请的，或是刚定义的一个数组），都应合理擦洗内存（处理内存脏数据的问题）
+
+- 最简单可靠的方式就是遍历赋初值，当然也可用库函数 [fill](https://zh.cppreference.com/w/cpp/algorithm/fill)
+
+- 注意：[memset](https://zh.cppreference.com/w/cpp/string/byte/memset) 不能用于擦洗内存
+
+```c
+for (int i = 0; i < maxSize; i ++) {
+  list.data[i] = 0;
+}
+```
+
+> 结构体中静态数组的长度必须用 「常量」，而不能用 「只读变量」
+
+- 「只读变量」 是在内存中开辟一个地方来存放它的值，只不过这个值由编译器限定不允许被修改，关键字 const 就是用来限定一个变量不允许被改变的修饰符（Qualifier）
+
+- ANSI-C 规定：数组定义时长度必须是 「常量」
+
+```c
+// 定义顺序表（静态分配方式）
+#define maxSize 10 // 不能用 const int maxSize = 10;
+typedef struct {
+  int data[maxSize];
+  int length;
+} SqList;
+```
+
+> 封装函数应认真思考返回值的类型，应尽量避免避免不加思考直接写 void
+
+- 确保代码的健壮性
