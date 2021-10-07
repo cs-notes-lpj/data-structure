@@ -1,5 +1,5 @@
 /**
- * 顺序表
+ * 顺序表( 静态分配方式 )
 */
 
 #include <stdio.h>
@@ -11,14 +11,14 @@ typedef struct {
   int length;
 } SqList;
 
-void InitList(SqList * list) {
+SqList * InitList(SqList * list) {
 
   for (int i = 0; i < maxSize; i++) {
     list->data[i] = 0;
   }
 
   list->length = 0;
-
+  return list;
 }
 
 bool InsertList(SqList * list, int idx, int elem) {
@@ -111,7 +111,7 @@ int main() {
 
   // 查找存储数据为 104 的结点，返回其位序
   printf("--------------\n");
-  int tmp = 102;
+  int tmp = 104;
   printf("%d 位续 => %d\n", tmp, LocateElem(list, tmp));
 
 
