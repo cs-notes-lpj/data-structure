@@ -96,6 +96,38 @@ bool InsertNextNode(LNode * ptr, int elem) {
 
 }
 
+// 按位序删结点
+bool ListDelete(LinkList * list, int idx, int * res) {
+  if (idx < 1) {
+    printf("位序 「左」 非法，已取消本次删除\n");
+    return false;
+  }
+
+  // 从头结点开始向后遍历寻找要删除结点的前驱结点；「将头结点看成位序 0」
+  LNode * ptr = (*list); int index = 0;
+  while (index + 1 < idx) {
+    ptr = ptr->next;
+    index++;
+
+    if (ptr == NULL) {
+      printf("位序 「右」 非法，已取消本次删除\n");
+      return false;
+    }
+  }
+
+  if (ptr->next == NULL) {
+    printf("待删除位序的前驱结点是尾结点，已取消本次删除\n");
+    return false;
+  }
+
+  LNode * deletedNode = ptr->next; // 缓存
+  * res = deletedNode->data;       // 带回
+  ptr->next = deletedNode->next;   // 调指向
+  free(deletedNode);               // 释结点
+
+  return true;
+}
+
 int main() {
 
   // 声明并初始化一个有头结点的单链表
@@ -122,6 +154,14 @@ int main() {
   printf("-------------\n");
   InsertNextNode(L->next->next, 9999);
   InsertNextNode(L->next->next->next->next->next, 1234);
+  PrintList(L);
+
+  // 删掉 9999 => 1001 1002 1003
+  printf("-------------\n");
+  int deletedData;
+  if (ListDelete(&L, 3, &deletedData)) {
+    printf("The deleted node contains number => %d\n", deletedData);
+  };
   PrintList(L);
 
   return 0;
