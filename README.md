@@ -12,7 +12,19 @@
 
 #### C 语言没有布尔类型的变量
 
-![](https://gitee.com/pj-l/imgs-1/raw/master/screenShot/image-20210922213613501.png)
+> C++ 有布尔类型但 C 没有，可是布尔类型能让代码可读性更高，所以模拟布尔类型
+
+```c
+// 方法一
+typedef enum { false = 0, true } bool;
+```
+
+```c
+// 方法二
+typedef int bool;
+#define true 1
+#define false 0
+```
 
 #### 结构体的定义中不允许赋初始值
 
