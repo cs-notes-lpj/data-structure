@@ -128,6 +128,18 @@ bool ListDelete(LinkList * list, int idx, int * res) {
   return true;
 }
 
+int Length(LinkList list) {
+  if (list->next == NULL) {
+    return 0;
+  }
+
+  int len = 0;
+  for (LNode * ptr = list->next; ptr != NULL; ptr = ptr->next) {
+    len++;
+  }
+  return len;
+}
+
 int main() {
 
   // 声明并初始化一个有头结点的单链表
@@ -163,6 +175,9 @@ int main() {
     printf("The deleted node contains number => %d\n", deletedData);
   };
   PrintList(L);
+
+  // 输出链表的表长（头结点不存数据，不算入表长）
+  printf("list-withHead-length: %d\n", Length(L));
 
   return 0;
 }
