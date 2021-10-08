@@ -75,6 +75,27 @@ bool ListInsert(LinkList * L, int idx, int elem) {
 
 }
 
+// 指定结点后插
+bool InsertNextNode(LNode * ptr, int elem) {
+
+  if (ptr == NULL) {
+    printf("未指定任何结点，取消插入...\n");
+    return false;
+  }
+
+  LNode * tmp = (LNode *)malloc(sizeof(LNode));
+  if (tmp == NULL) {
+    return false;
+  }
+
+  tmp->data = elem;
+  tmp->next = ptr->next;
+  ptr->next = tmp;
+
+  return true;
+
+}
+
 int main() {
 
   // 声明并初始化一个有头结点的单链表
@@ -95,6 +116,12 @@ int main() {
   ListInsert(&L, 3, 1003);
 
   // 期望：1001 1002 1003
+  PrintList(L);
+
+  // 期望：1001 1002 9999 1003
+  printf("-------------\n");
+  InsertNextNode(L->next->next, 9999);
+  InsertNextNode(L->next->next->next->next->next, 1234);
   PrintList(L);
 
   return 0;
