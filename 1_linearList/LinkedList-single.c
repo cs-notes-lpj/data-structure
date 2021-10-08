@@ -99,6 +99,31 @@ bool InsertPriorNode(LNode * ptr , int elem) {
   return true;
 }
 
+bool DeleteNode(LNode * ptr, int * res) {
+  if (ptr == NULL) {
+    printf("指针指向 NULL，已取消本次删结点操作...");
+    return false;
+  }
+
+  LNode * tmpPtr = ptr->next; // 缓存
+
+  if (tmpPtr == NULL) {
+    printf("指针指向尾结点，因尾结点无后继结点，故本方法不可用，已取消本次删结点操作...\n");
+    return false;
+  }
+
+  ptr->next = ptr->next->next;// 调指向，构造出逻辑结构
+
+  (*res) = ptr->data;         // 带回数据
+
+  ptr->data = tmpPtr->data;   // 数据归位
+
+  free(tmpPtr);               // 释结点内存
+
+  return true;
+
+}
+
 int main() {
 
   LinkList L = NULL;
@@ -121,6 +146,14 @@ int main() {
   printf("-------------\n");
   InsertPriorNode(L, 123);
   InsertPriorNode(L->next->next->next->next, 456);
+  PrintList(L);
+
+  // 期望：123 1002 1003
+  printf("-------------\n");
+  int deletedData;
+  if (DeleteNode(L->next, &deletedData)) {
+    printf("The deleted node contains number => %d\n", deletedData);
+  };
   PrintList(L);
 
   return 0;
