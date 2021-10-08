@@ -3,6 +3,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /* --------- 定义单链表 --------- */
 struct NODE {
@@ -27,6 +28,53 @@ void PrintList(LinkList list) {
   }
 }
 
+bool ListInsert(LinkList * list, int idx, int elem) {
+  if (idx < 1) {
+    printf("位序 %d 非法，取消本次插入...\n", idx);
+    return false;
+  }
+
+  // 位序为 1 的结点无前驱结点，故需单独处理
+  if (idx == 1) {
+
+    LNode * node = (LNode *)malloc(sizeof(LNode));
+    if (node == NULL) {
+      return false;
+    }
+
+    node->data = elem;
+    node->next = (*list);
+    (*list) = node;
+
+    return true;
+
+  }
+
+  // 从第一个结点开始向后遍历寻找待插入位序的前驱结点
+  LNode * ptr = (*list); int index = 1;
+  while (index + 1 < idx) {
+    ptr = ptr->next;
+    index++;
+
+    if (ptr == NULL) {
+      printf("位序 %d 非法，取消本次插入...\n", idx);
+      return false;
+    }
+  }
+
+  LNode * newNode = (LNode *)malloc(sizeof(LNode));
+  if (newNode == NULL) {
+    return false;
+  }
+
+  newNode->data = elem;
+  newNode->next = ptr->next;
+  ptr->next = newNode;
+
+  return true;
+
+}
+
 int main() {
 
   LinkList L = NULL;
@@ -35,15 +83,15 @@ int main() {
     PrintList(L);
   }
 
-  // ListInsert(&L, 1, 1001);
-  // ListInsert(&L, 2, 1002);
-  // ListInsert(&L, 4, 1004);
-  // ListInsert(&L, 5, 1005);
-  // ListInsert(&L, -1, 777);
-  // ListInsert(&L, 3, 1003);
+  ListInsert(&L, 1, 1001);
+  ListInsert(&L, 2, 1002);
+  ListInsert(&L, 4, 1004);
+  ListInsert(&L, 5, 1005);
+  ListInsert(&L, -1, 777);
+  ListInsert(&L, 3, 1003);
 
-  // // 期望：1001 1002 1003
-  // PrintList(L);
+  // 期望：1001 1002 1003
+  PrintList(L);
 
   return 0;
 }
