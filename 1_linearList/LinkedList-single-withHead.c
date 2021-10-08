@@ -83,7 +83,7 @@ int main() {
 
   // 有头结点的单链表的判空
   if (isEmpty(L)) {
-    printf("恭喜，你声明并初始化了一个空的单链表\n");
+    printf("恭喜，你声明并初始化了一个有头结点的空的单链表\n");
     PrintList(L);
   }
 
