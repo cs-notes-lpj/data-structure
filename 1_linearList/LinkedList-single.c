@@ -75,6 +75,30 @@ bool ListInsert(LinkList * list, int idx, int elem) {
 
 }
 
+// 指定结点前插
+bool InsertPriorNode(LNode * ptr , int elem) {
+  if (ptr == NULL) {
+    printf("未指定任何结点，取消前插...\n");
+    return false;
+  }
+
+  LNode * newNode = (LNode *)malloc(sizeof(LNode));
+  if (newNode == NULL) {
+    return false;
+  }
+
+  int tmpData = ptr->data;
+
+  // 偷天换日（结点前插 == 结点后插 + 交换数据）
+  newNode->next = ptr->next;
+  ptr->next = newNode;
+
+  ptr->data = elem;
+  newNode->data = tmpData;
+
+  return true;
+}
+
 int main() {
 
   LinkList L = NULL;
@@ -91,6 +115,12 @@ int main() {
   ListInsert(&L, 3, 1003);
 
   // 期望：1001 1002 1003
+  PrintList(L);
+
+  // 期望：123 1001 1002 1003
+  printf("-------------\n");
+  InsertPriorNode(L, 123);
+  InsertPriorNode(L->next->next->next->next, 456);
   PrintList(L);
 
   return 0;
