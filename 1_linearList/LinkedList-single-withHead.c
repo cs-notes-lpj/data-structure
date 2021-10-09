@@ -128,6 +128,31 @@ bool ListDelete(LinkList * list, int idx, int * res) {
   return true;
 }
 
+// 按位序查找结点
+LNode * GetElem(LinkList list, int idx) {
+  if (idx < 1) {
+    printf("位序 「左」 非法，取消本次按位查找...\n");
+    return NULL;
+  }
+
+  // 从位序 1 的结点开始向后遍历寻找位序为 idx 的结点
+  LNode * ptr = list->next;
+  int index = 1;
+
+  while (index < idx) {
+    ptr = ptr->next;
+    index ++;
+
+    if (ptr == NULL) {
+      printf("位序 「右」 非法，取消本次按位查找...\n");
+      return NULL;
+    }
+  }
+
+  return ptr;
+
+}
+
 int Length(LinkList list) {
   if (list->next == NULL) {
     return 0;
@@ -178,6 +203,14 @@ int main() {
 
   // 输出链表的表长（头结点不存数据，不算入表长）
   printf("list-withHead-length: %d\n", Length(L));
+
+  // 按位查找结点 => 期望 1002
+  LNode * resNode = GetElem(L, 2);
+  if (resNode == NULL) {
+    printf("结点没找到...\n");
+  } else {
+    printf("找到的结点中存储的数据为：%d\n", resNode->data);
+  }
 
   return 0;
 }
