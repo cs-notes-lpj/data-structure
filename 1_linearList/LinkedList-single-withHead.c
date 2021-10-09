@@ -153,6 +153,30 @@ LNode * GetElemByIdx(LinkList list, int idx) {
 
 }
 
+// 按值查找结点
+// 注意：判断构造数据类型的数据元素之间的关系，不能用简单的等或不等号，而应封装一个加强版的判等函数来使用 ！
+LNode * GetElemByData(LinkList list, int data) {
+
+  // 链表判空（带头结点）
+  LNode * ptr = list->next;
+  if (list == NULL) {
+    printf("你传进来的是个带头结点的空链表，取消本次按值查找...\n");
+  }
+
+  // 从位序 1 的结点逐个向后遍历查找值对应的结点
+  while (ptr->data != data) {
+    ptr = ptr->next;
+
+    if (ptr == NULL) {
+      printf("按值查找结点没找到...\n");
+      return NULL;
+    }
+  }
+
+  return ptr;
+
+}
+
 int Length(LinkList list) {
   if (list->next == NULL) {
     return 0;
@@ -210,6 +234,17 @@ int main() {
     printf("按位序找结点没找到...\n");
   } else {
     printf("按位序找结点找到了，结点中存储的数据为：%d\n", resNode->data);
+  }
+
+  // 按值查找结点 => 1003
+  int data = 1003;
+  LNode * bakNode = GetElemByData(L, data);
+  if (bakNode != NULL) {
+    if (bakNode->data == data) {
+      printf("按值查找结点找到了，结点中存储的数据确实为：%d\n", bakNode->data);
+    } else {
+      printf("按值查找结点找到了，但找到的结点中存储的数据和期望不对...\n");
+    }
   }
 
   return 0;
