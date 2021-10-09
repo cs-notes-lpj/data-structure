@@ -204,12 +204,12 @@ int main() {
   // 输出链表的表长（头结点不存数据，不算入表长）
   printf("list-withHead-length: %d\n", Length(L));
 
-  // 按位查找结点 => 期望 1002
+  // 按位序查找结点 => 位序 2 => 1002
   LNode * resNode = GetElemByIdx(L, 2);
   if (resNode == NULL) {
-    printf("结点没找到...\n");
+    printf("按位序找结点没找到...\n");
   } else {
-    printf("找到的结点中存储的数据为：%d\n", resNode->data);
+    printf("按位序找结点找到了，结点中存储的数据为：%d\n", resNode->data);
   }
 
   return 0;
