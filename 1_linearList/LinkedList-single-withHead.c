@@ -129,7 +129,7 @@ bool ListDelete(LinkList * list, int idx, int * res) {
 }
 
 // 按位序查找结点
-LNode * GetElem(LinkList list, int idx) {
+LNode * GetElemByIdx(LinkList list, int idx) {
   if (idx < 1) {
     printf("位序 「左」 非法，取消本次按位查找...\n");
     return NULL;
@@ -205,7 +205,7 @@ int main() {
   printf("list-withHead-length: %d\n", Length(L));
 
   // 按位查找结点 => 期望 1002
-  LNode * resNode = GetElem(L, 2);
+  LNode * resNode = GetElemByIdx(L, 2);
   if (resNode == NULL) {
     printf("结点没找到...\n");
   } else {
