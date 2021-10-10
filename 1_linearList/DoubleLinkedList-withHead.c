@@ -87,6 +87,29 @@ bool InsertNextNode(DNode * destPtr, int data) {
 
 }
 
+// 指定结点删除（等价于删其前驱的后继）
+bool DeleteNode(DNode * ptr) {
+  if (ptr == NULL) {
+    return false;
+  }
+
+  DNode * priorPtr = ptr->prior;
+
+  if (priorPtr == NULL) {
+    printf("不允许删除双链表的头结点，已取消本次删除结点的操作\n");
+    return false;
+  }
+
+  priorPtr->next = ptr->next;
+  if (ptr->next != NULL) {
+    ptr->next->prior = priorPtr;
+  }
+  free(ptr);
+
+  return true;
+
+}
+
 int main() {
 
   DLinkList L;
@@ -96,7 +119,16 @@ int main() {
 
   // 指定结点的后插操作
   InsertNextNode(L, 100);
-  printDLinkList(L);
+  InsertNextNode(L, 200);
+  InsertNextNode(L->next, 999);
+  InsertNextNode(L, 300);
+  InsertNextNode(L, 400);
+
+  printDLinkList(L); // 400 300 200 999 100
+
+  // 指定节点删除
+  DeleteNode(L->next->next->next->next);
+  printDLinkList(L); // 400 300 200 100
 
   return 0;
 }
