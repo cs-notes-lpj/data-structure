@@ -110,6 +110,30 @@ bool DeleteNode(DNode * ptr) {
 
 }
 
+// 销毁链表
+bool DestoryDLinkList(DLinkList * list) {
+  if ((*list) == NULL) {
+    return false;
+  }
+
+  // 得保证传进来的指针指向头结点，才能将双链表完全销毁
+  if ((*list)->prior != NULL) {
+    return false;
+  }
+
+  // 每次都是销毁头结点的后继结点
+  while ((*list)->next != NULL) {
+    DeleteNode((*list)->next);
+  }
+
+  // 销毁头结点
+  free(*list);
+  (*list) = NULL;
+
+  return true;
+
+}
+
 int main() {
 
   DLinkList L;
@@ -129,6 +153,12 @@ int main() {
   // 指定节点删除
   DeleteNode(L->next->next->next->next);
   printDLinkList(L); // 400 300 200 100
+
+  // 销毁链表
+  if (DestoryDLinkList(&L)) {
+    printf("链表销毁成功\n");
+  };
+  printDLinkList(L);
 
   return 0;
 }
