@@ -30,11 +30,20 @@ CDList InitCDList(CDList * list) {
   return (*list);
 }
 
+typedef enum { false = 0, true } bool;
+bool isEmpty(CDList list) {
+  return (list->next == list);
+}
+
 int main() {
 
   // 声明并初始化一个带头结点的循环双链表
   CDList L;
   InitCDList(&L);
+
+  if (isEmpty(L)) {
+    printf("你成功初始化了一个带头结点的空的循环双链表\n");
+  }
 
   return 0;
 }
