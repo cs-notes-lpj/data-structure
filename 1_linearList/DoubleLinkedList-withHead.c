@@ -44,12 +44,59 @@ bool isEmpty(DLinkList list) {
   return (list->next == NULL);
 }
 
+// 遍历输出双链表
+void printDLinkList(DLinkList list) {
+  if (list == NULL) {
+    return;
+  }
+
+  DNode * ptr = list->next;
+
+  while (ptr != NULL) {
+    printf("%d ", ptr->data);
+    ptr = ptr->next;
+  }
+
+  printf("\n");
+  return;
+}
+
+/** 指定结点的后插操作
+ * destPtr 被插结点，将在该结点后插入新结点
+ * data 新结点中将存放的数据元素
+*/
+bool InsertNextNode(DNode * destPtr, int data) {
+  if (destPtr == NULL) {
+    return false;
+  }
+
+  DNode * newNode = (DNode *)malloc(sizeof(DNode));
+  if (newNode == NULL) {
+    return false;
+  }
+  newNode->data = data;
+
+  newNode->next = destPtr->next;
+  if (destPtr->next != NULL) {
+    destPtr->next->prior = newNode;
+  }
+  destPtr->next = newNode;
+  newNode->prior = destPtr;
+
+  return true;
+
+}
+
 int main() {
 
   DLinkList L;
   if (InitDLinkList(&L) && isEmpty(L)) {
     printf("恭喜，你声明并初始化了一个带头结点的空的双链表\n");
   }
+
+  // 指定结点的后插操作
+  InsertNextNode(L, 100);
+  printDLinkList(L);
 
   return 0;
 }
