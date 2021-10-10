@@ -136,7 +136,7 @@ bool DestoryDLinkList(DLinkList * list) {
 
 int main() {
 
-  DLinkList L;
+  DLinkList L = NULL;
   if (InitDLinkList(&L) && isEmpty(L)) {
     printf("恭喜，你声明并初始化了一个带头结点的空的双链表\n");
   }
