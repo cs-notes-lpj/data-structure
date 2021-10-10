@@ -31,6 +31,15 @@ bool isEmpty(CLinkList list) {
   return (list->next == list);
 }
 
+// 判断指针指向的是否是循环单链表的表尾结点
+bool isTail(CLinkList L, CLNode * ptr) {
+  if (L == NULL || ptr == NULL) {
+    return false;
+  }
+
+  return (ptr->next == L);
+}
+
 int main() {
 
   CLinkList L = NULL;
