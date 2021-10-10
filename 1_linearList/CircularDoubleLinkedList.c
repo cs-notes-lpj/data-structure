@@ -35,6 +35,14 @@ bool isEmpty(CDList list) {
   return (list->next == list);
 }
 
+// 判断 ptr 所指向结点是否是 list 的尾结点
+bool isTail(CDList list, CDNode * ptr) {
+  if (list == NULL || ptr == NULL) {
+    return false;
+  }
+  return (ptr->next == list);
+}
+
 int main() {
 
   // 声明并初始化一个带头结点的循环双链表
