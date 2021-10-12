@@ -68,6 +68,17 @@ bool Pop(SeqStack * s, int * res) {
   return true;
 }
 
+// 读栈顶
+bool GetTop(SeqStack s, int * res) {
+  // 栈空，拒绝读栈顶
+  if (s.top == -1) {
+    return false;
+  }
+
+  (*res) = s.data[s.top];
+  return true;
+}
+
 int main() {
 
   SeqStack s;
@@ -86,6 +97,11 @@ int main() {
   if (Pop(&s, &res)) {
     printf("出栈成功，res = %d\n", res);
     printStack(s);
+  }
+
+  int curTop;
+  if (GetTop(s, &curTop)) {
+    printf("当前栈顶数据元素为：%d\n", curTop);
   }
 
   return 0;
