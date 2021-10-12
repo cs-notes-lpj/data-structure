@@ -36,11 +36,22 @@ bool isFullShStack(ShStack s) {
   return (s.top0 + 1 == s.top1);
 }
 
+// 清空栈（逻辑上的操作；变量声明申请的内存，回收由系统负责）
+bool makeEpmty(ShStack * s) {
+  (*s).top0 = -1;
+  (*s).top1 = maxSize;
+  return true;
+}
+
 int main() {
 
   ShStack s;
   if (InitShStack(&s) && isEmptyShStack(s) && !isFullShStack(s)) {
     printf("恭喜，你成功初始化了一个空的共享栈！\n");
+  }
+
+  if (makeEpmty(&s)) {
+    printf("清空了共享栈\n");
   }
 
   return 0;
