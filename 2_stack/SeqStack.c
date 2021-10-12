@@ -24,12 +24,21 @@ bool InitSeqStack(SeqStack * s) {
   return true;
 }
 
+// 顺序栈判空
+bool isEmpty(SeqStack s) {
+  return (s.top == -1);
+}
+
 int main() {
 
   SeqStack s;
-  if (InitSeqStack(&s)) {
+  if (InitSeqStack(&s) && isEmpty(s)) {
     printf("恭喜，你成功初始化了一个空的顺序栈！\n");
   }
+
+  printf("顺序栈变量所占内存字节数：%d\n", sizeof(s)); // 44 => maxSize * sizeof(int) + sizeof(int)
+
+
 
   return 0;
 }
