@@ -26,10 +26,20 @@ bool InitShStack (ShStack * s) {
   return true;
 }
 
+// 共享栈判空
+bool isEmptyShStack(ShStack s) {
+  return (s.top0 == -1 && s.top1 == maxSize);
+}
+
+// 共享栈判满
+bool isFullShStack(ShStack s) {
+  return (s.top0 + 1 == s.top1);
+}
+
 int main() {
 
   ShStack s;
-  if (InitShStack(&s)) {
+  if (InitShStack(&s) && isEmptyShStack(s) && !isFullShStack(s)) {
     printf("恭喜，你成功初始化了一个空的共享栈！\n");
   }
 
