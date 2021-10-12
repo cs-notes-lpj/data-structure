@@ -55,6 +55,19 @@ void printStack(SeqStack s) {
   return;
 }
 
+// 出栈
+bool Pop(SeqStack * s, int * res) {
+  // 栈空，则拒绝出栈
+  if (s->top == -1) {
+    return false;
+  }
+
+  // 出栈是一种逻辑上的操作，实际数据还残留在内存中
+  (*res) = s->data[s->top];
+  s->top = s->top - 1;
+  return true;
+}
+
 int main() {
 
   SeqStack s;
@@ -69,7 +82,11 @@ int main() {
   Push(&s, 333);
   printStack(s);
 
-
+  int res;
+  if (Pop(&s, &res)) {
+    printf("出栈成功，res = %d\n", res);
+    printStack(s);
+  }
 
   return 0;
 }
