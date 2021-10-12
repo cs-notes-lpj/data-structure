@@ -1,20 +1,20 @@
 /**
- * 栈
+ * 顺序栈
 */
 
 #include <stdio.h>
 
-/* --- 定义栈 --- */
+/* --- 定义顺序栈 --- */
 #define maxSize 10
 typedef struct {
   int data[maxSize];
   int top;
-} Stack;
-/* --- 定义栈 --- */
+} SeqStack;
+/* --- 定义顺序栈 --- */
 
-// 初始化「栈」
+// 顺序栈的初始化
 typedef enum { false = 0, true } bool;
-bool InitStack(Stack * s) {
+bool InitSeqStack(SeqStack * s) {
   s->top = -1;  
 
   for (int i = 0; i < maxSize; i ++) {
@@ -26,9 +26,9 @@ bool InitStack(Stack * s) {
 
 int main() {
 
-  Stack s;
-  if (InitStack(&s)) {
-    printf("恭喜，你成功初始化了一个空栈！\n");
+  SeqStack s;
+  if (InitSeqStack(&s)) {
+    printf("恭喜，你成功初始化了一个空的顺序栈！\n");
   }
 
   return 0;
