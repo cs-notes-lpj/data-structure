@@ -20,7 +20,7 @@ bool InitSeqStack(SeqStack * s) {
   return true;
 }
 
-bool Push(SeqStack * s, int elem) {
+bool Push(SeqStack * s, char elem) {
   if ((*s).top == maxSize - 1) {
     return false;
   }
@@ -30,7 +30,7 @@ bool Push(SeqStack * s, int elem) {
   return true;
 }
 
-bool Pop(SeqStack * s, int * res) {
+bool Pop(SeqStack * s, char * res) {
   if ((*s).top == -1) {
     return false;
   }
@@ -93,7 +93,7 @@ bool matchBrackets(char arr[], int len) {
       } else {
 
         // 将括号进行配对
-        int oldTop; Pop(&s, &oldTop);
+        char oldTop; Pop(&s, &oldTop);
         if (isMatch(oldTop, arr[i])) {
           continue;
         } else {
@@ -124,8 +124,23 @@ int main() {
   char arr5[] = {'{', '(', '(', ')', ')', '}', ']', '(', ')'};// 右括号单身
   char arr6[] = {'{', '{', '(', '(', ')', ')', '[', ']', '}'};// 左括号单身
 
+  if (matchBrackets(arr1, sizeof(arr1) / sizeof(char))) {
+    printf("括号匹配！\n");
+  }
+  if (matchBrackets(arr2, sizeof(arr2) / sizeof(char))) {
+    printf("括号匹配！\n");
+  }
   if (matchBrackets(arr3, sizeof(arr3) / sizeof(char))) {
-    printf("括号匹配！");
+    printf("括号匹配！\n");
+  }
+  if (matchBrackets(arr4, sizeof(arr4) / sizeof(char))) {
+    printf("括号匹配！\n");
+  }
+  if (matchBrackets(arr5, sizeof(arr5) / sizeof(char))) {
+    printf("括号匹配！\n");
+  }
+  if (matchBrackets(arr6, sizeof(arr6) / sizeof(char))) {
+    printf("括号匹配！\n");
   }
 
   return 0;
