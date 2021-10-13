@@ -54,9 +54,21 @@ bool Pop(LinkStack * s, int * res) {
   /* --- 出栈 --- */
   (*s) = (*s)->next;
   (*res) = tmp->data;
+  free(tmp);
   /* --- 出栈 --- */
 
-  free(tmp); // 内存回收
+  return true;
+
+}
+
+// 读栈顶
+bool GetTop(LinkStack s, int * res) {
+  // 栈空，则拒绝读栈
+  if (s == NULL) {
+    return false;
+  }
+
+  (*res) = s->data;
   return true;
 }
 
@@ -76,7 +88,10 @@ int main() {
     printf("出栈的结点元素：%d\n", res);
   }
 
-  
+  int curTop;
+  if (GetTop(s, &curTop)) {
+    printf("读栈顶成功，当前栈顶元素为：%d\n", curTop);
+  }
 
   return 0;
 }
