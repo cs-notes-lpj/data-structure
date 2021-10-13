@@ -39,7 +39,25 @@ void PrintLinkStack(LinkStack s) {
     printf("%d ", ptr->data);
     ptr = ptr->next;
   }
+  printf("\n");
   return;
+}
+
+bool Pop(LinkStack * s, int * res) {
+  // 栈空则拒绝出栈
+  if ((*s) == NULL) {
+    return false;
+  }
+
+  LSNode * tmp = (*s); // 缓存待出栈结点
+
+  /* --- 出栈 --- */
+  (*s) = (*s)->next;
+  (*res) = tmp->data;
+  /* --- 出栈 --- */
+
+  free(tmp); // 内存回收
+  return true;
 }
 
 int main() {
@@ -51,6 +69,14 @@ int main() {
   Push(&s, 222);
   Push(&s, 333);
   PrintLinkStack(s); // stack => LIFO => 333 222 111
+
+  int res;
+  if (Pop(&s, &res)) {
+    PrintLinkStack(s); // 222 111
+    printf("出栈的结点元素：%d\n", res);
+  }
+
+  
 
   return 0;
 }
