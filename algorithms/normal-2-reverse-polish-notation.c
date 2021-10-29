@@ -67,16 +67,21 @@ int main() {
   printf("请输入一个长度为 %d 的中缀表达式，按回车确认：", len);
 
   // 注意啊！这里是 len + 1，因为字符数组最后一个位置得留给'\0'
-  #define arrSize len + 1
-  char NN[arrSize];
-  for (int i = 0; i < arrSize; i ++) {
+  #define size len + 1
+  char NN[size];
+  for (int i = 0; i < size; i ++) {
     scanf("%c", &NN[i]);
   }
 
-  printf("您输入的中缀表达式为：%s\n", NN);
+  printf("您输入的中缀表达式为：");
+  for (int i = 0; i < size; i ++) { // printf("%s\n", NN);
+    printf("%c", NN[i]);
+  }
+  printf("\n");
 
   // // 中缀表达式
-  // char NN[27] = { '(', '(', 15, '/', '(', 7, '-', '(', 1, '+', 1, ')', ')', ')', '*', 3, ')', '-', '(', 2, '+', '(', 1, '+', 1, ')', ')' };
+  // ((5/(7-(1+1)))*3)-(2+(1+1))
+  // ((15/(7-(1+1)))*3)-(2+(1+1))
 
   return 0;
 }
