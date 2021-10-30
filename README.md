@@ -4,34 +4,34 @@
 
 #### 已实现的数据结构与算法
 
-- [x] 线性表：1_linearList/
-  - [x] 顺序表
+- 线性表：1_linearList/
+  - 顺序表
     - [x] 静态分配方式：SqList.c
     - [x] 动态分配方式：SqList-dynamic.c
-  - [x] 单链表
+  - 单链表
     - [x] 无头结点：LinkedList-single.c
     - [x] 有头结点：LinkedList-single-withHead.c
     - [x] 原地逆置有头结点的单链表：LinkedList-single-withHead-reverse.c
-  - [x] 双链表
+  - 双链表
     - [x] 有头结点：DoubleLinkedList-withHead.c
     - [ ] 无头结点
-  - [x] 循环链表
-    - [x] 循环单链表
+  - 循环链表
+    - 循环单链表
       - [x] 有头结点：CircularSingleLinkedList.c
       - [ ] 无头结点
-    - [x] 循环双链表：
+    - 循环双链表：
       - [x] 有头结点：CircularDoubleLinkedList.c
       - [ ] 无头结点
   - [x] 静态链表：StaticLinkedList.c
 
-- [x] 栈：2_stack/
+- 栈：2_stack/
   - [x] 顺序栈：SeqStack.c
   - [x] 共享栈：ShStack.c
   - [x] 链栈：LinkStack.c (与线性表不同，链栈推荐无头结点实现)
-  - [x] 用栈实现的括号匹配算法
+  - 用栈实现的括号匹配算法
     - [x] 原生语法：matchBrackets.c
     - [x] 用栈实现：matchBrackets-stack.c
-  - [ ] 表达式求值问题
+  - 表达式求值问题
     - [x] 中缀表达式转后缀表达式：normal-2-reverse-polish-notation.c
     - [x] 计算后缀表达式：count-reverse-polish-notation.c
     - [ ] 计算中缀表达式：前两个算法的结合，开两个栈实现
