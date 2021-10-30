@@ -1,6 +1,6 @@
 /**
  * 链队列（单链表的阉割版：只允许从队头删除，从队尾插入）
- * 带头结点
+ * 无头结点
  */
 
 #include <stdio.h>
@@ -25,24 +25,14 @@ typedef struct {
 
 // 初始化队列
 bool InitSeqQueue(LinkedQueue * lq) {
-  // 为头结点申请内存
-  LinkNode * tmp = (LinkNode *)malloc(sizeof(LinkNode));
-  if (tmp == NULL) {
-    printf("创建头结点失败，初始化队列失败...\n");
-    return false;
-  }
-
-  tmp->next = NULL;
-  lq->front = tmp;
-  lq->rear = tmp;
-
+  lq->front = NULL;
+  lq->rear = NULL;
   return true;
-
 }
 
 // 队列判空
 bool IsQueueEmpty(LinkedQueue lq) {
-  return (lq.front->next == NULL);
+  return (lq.front == NULL && lq.rear == NULL);
 }
 
 // 入队
@@ -56,9 +46,15 @@ bool EnQueue(LinkedQueue * lq, int num) {
   tmp->data = num;
   tmp->next = NULL;
 
-  // 队尾入队 + 更新队尾指针
-  lq->rear->next = tmp;
-  lq->rear = tmp;
+  if (IsQueueEmpty(*lq)) { // 当插入第一个数据元素时需要特殊处理
+    lq->front = tmp;
+    lq->rear = tmp;
+  } else {
+    // 队尾入队 + 更新队尾指针
+    lq->rear->next = tmp;
+    lq->rear = tmp;
+  }
+  
   return true;
 
 }
@@ -72,11 +68,11 @@ int DeQueue(LinkedQueue * lq) {
   }
 
   // 首先缓存住待出队结点（因为要手动 free 它的内存）
-  LinkNode * tmp = lq->front->next;
+  LinkNode * tmp = lq->front;
   int res = tmp->data;
 
   // 从队头出队（更新头结点的 next 指向）
-  lq->front->next = tmp->next;
+  lq->front = tmp->next;
 
   // 如果此次是最后一个结点出队，则需要修改队尾指针
   if (tmp == lq->rear) {
@@ -91,7 +87,7 @@ int DeQueue(LinkedQueue * lq) {
 // 计算队列长度
 int getQueueLen(LinkedQueue lq) {
   int res;
-  LinkNode * ptr = lq.front->next;
+  LinkNode * ptr = lq.front;
   for (res = 0; ptr != NULL; ptr = ptr->next) {
     res++;
   }
@@ -102,7 +98,7 @@ int main() {
 
   LinkedQueue lq;
   if (InitSeqQueue(&lq) && IsQueueEmpty(lq)) {
-    printf("恭喜！成功定义并初始化了一个空的带头结点的链队列\n");
+    printf("恭喜！成功定义并初始化了一个空的无头结点的链队列\n");
   }
 
   for (int i = 0; i < 12; i ++) {
