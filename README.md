@@ -40,7 +40,7 @@
 对于中缀表达式 => 后缀表达式（逆波兰式）
 
 ```txt
-  // algorithms/normal-2-reverse-polish-notation.c
+  // 2_stack/normal-2-reverse-polish-notation.c
 
   目前只支持操作数是个位数
     输入：((5/(7-(1+1)))*3)-(2+(1+1))
