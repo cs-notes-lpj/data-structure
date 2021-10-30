@@ -14,14 +14,14 @@
     - [x] 原地逆置有头结点的单链表：LinkedList-single-withHead-reverse.c
   - [x] 双链表
     - [x] 有头结点：DoubleLinkedList-withHead.c
-    - [] 无头结点
+    - [ ] 无头结点
   - [x] 循环链表
     - [x] 循环单链表
       - [x] 有头结点：CircularSingleLinkedList.c
-      - [] 无头结点
+      - [ ] 无头结点
     - [x] 循环双链表：
       - [x] 有头结点：CircularDoubleLinkedList.c
-      - [] 无头结点
+      - [ ] 无头结点
   - [x] 静态链表：StaticLinkedList.c
 
 - [x] 栈：2_stack/
@@ -31,10 +31,10 @@
   - [x] 用栈实现的括号匹配算法
     - [x] 原生语法：matchBrackets.c
     - [x] 用栈实现：matchBrackets-stack.c
-  - [] 表达式求值问题
+  - [ ] 表达式求值问题
     - [x] 中缀表达式转后缀表达式：normal-2-reverse-polish-notation.c
     - [x] 计算后缀表达式：count-reverse-polish-notation.c
-    - [] 计算中缀表达式：前两个算法的结合，开两个栈实现
+    - [ ] 计算中缀表达式：前两个算法的结合，开两个栈实现
 #### todo
 
 对于中缀表达式 => 后缀表达式（逆波兰式）
