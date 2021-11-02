@@ -90,7 +90,7 @@ int erFenChaZhao(int arr[], int arrLen, int dest) {
     return -1;
 
   } else {
-    printf("你传的是降序数组，和升序数组道理一样，先不实现了...\n");
+    printf("你传的是降序数组，和升序数组道理一样，就先不实现了（逃）\n");
     return 88888;
   }
 
@@ -98,10 +98,10 @@ int erFenChaZhao(int arr[], int arrLen, int dest) {
 
 int main() {
 
-  int arr[] = { 1, 4, 6, 7, 9, 16, 22, 35, 87 };
-  int len = sizeof(arr) / sizeof(int);
+  int arr[] = { 1, 4, 6, 7, 9, 16, 22, 35, 87 },
+      len = sizeof(arr) / sizeof(int),
+      res = erFenChaZhao(arr, len, 22);
 
-  int res = erFenChaZhao(arr, len, 22);
   if (res == -1) {
     printf("没找到...\n");
   } else {
@@ -110,14 +110,14 @@ int main() {
 
 /* 测试 isArrOrdered 函数的代码
   // success
-  int testArr[] = { 1 };
-  int testArr2[] = { 1, 1, 1 };
-  int testArr3[] = { 1, 1, 2, 2, 3, 4, 4, 5 };
-  int testArr4[] = { 5, 5, 5, 4, 3, 3, 3, 2 };
+  int testArr[] = { 1 },
+      testArr2[] = { 1, 1, 1 },
+      testArr3[] = { 1, 1, 2, 2, 3, 4, 4, 5 },
+      testArr4[] = { 5, 5, 5, 4, 3, 3, 3, 2 };
 
   // failure
-  int testArr5[] = { 1, 1, 1, 5, 4, 3, 2, 1 };
-  int testArr6[] = { 5, 5, 5, 4, 6, 3, 2, 1 };
+  int testArr5[] = { 1, 1, 1, 5, 4, 3, 2, 1 },
+      testArr6[] = { 5, 5, 5, 4, 6, 3, 2, 1 };
 
   if (!isArrOrdered(testArr6, sizeof(testArr6) / sizeof(int))) {
     printf("无序\n");
