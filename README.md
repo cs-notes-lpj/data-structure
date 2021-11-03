@@ -42,6 +42,9 @@
     - [x] 有头结点：LinkedQueue-withHead.c
     - [x] 无头结点：LinkedQueue.c
   - [ ] 双端队列
+
+- 串：4_string/
+  - [x] 比较串的大小
 #### todo
 
 对于中缀表达式 => 后缀表达式（逆波兰式）
