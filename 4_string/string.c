@@ -20,13 +20,13 @@ typedef struct {
 
 /**
  * 比较串的大小
+ * 注意 ch[0] 废弃不用，因此遍历从 i = 1 开始
  * - 若 S > T，则返回值 > 0
  * - 若 S = T，则返回值 = 0
  * - 若 S < T，则返回值 < 0
  */
 int StrCompare(SString S, SString T) {
   // 首先比较相同长度的前缀，先出现 ASCII 码大的字符的串就大
-  // 注意 ch[0] 废弃不用，因此遍历从 i = 1 开始
   for (int i = 1; i <= S.length && i <= T.length; i++) {
     if (S.ch[i] != T.ch[i]) {
       return (S.ch[i] - T.ch[i]);
@@ -36,6 +36,8 @@ int StrCompare(SString S, SString T) {
   // 前缀一模一样，要么俩串就是一样的，要么长的串更大
   return S.length - T.length;
 }
+
+
 
 int main() {
   return 0;
