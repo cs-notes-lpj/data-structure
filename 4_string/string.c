@@ -9,6 +9,7 @@
  */
 
 #include <stdio.h>
+typedef enum { false = 0, true } bool;
 
 /*-- 定义数据结构：串 --*/
 #define maxSize 255
@@ -21,6 +22,8 @@ typedef struct {
 /**
  * 比较串的大小
  * 注意 ch[0] 废弃不用，因此遍历从 i = 1 开始
+ * @param {SString} S 串
+ * @param {SString} T 串
  * - 若 S > T，则返回值 > 0
  * - 若 S = T，则返回值 = 0
  * - 若 S < T，则返回值 < 0
@@ -37,7 +40,29 @@ int StrCompare(SString S, SString T) {
   return S.length - T.length;
 }
 
+/**
+ * 子串拷贝
+ * 用 Sub 返回串 S 的第 pos 个字符起长度为 len 的子串
+ * @param {SString *} Sub 指向串的指针
+ * @param {SString} S 串
+ * @param {int} pos 拷贝的起始位置
+ * @param {int} len 拷贝的长度
+ */
+bool SubString(SString * Sub, SString S, int pos, int len) {
+  // 判断子串范围是否越界
+  if (pos + len - 1 > S.length) {
+    return false;
+  }
 
+  // 拷贝
+  for (int i = pos; i < pos + len; i ++) {
+    (*Sub).ch[i - pos + 1] = S.ch[i];
+  }
+  (*Sub).length = len; // 一定要记得写这行代码!!!
+
+  return true;
+
+}
 
 int main() {
   return 0;
