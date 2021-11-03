@@ -43,6 +43,7 @@ int StrCompare(SString S, SString T) {
 /**
  * 子串拷贝
  * 用 Sub 返回串 S 的第 pos 个字符起长度为 len 的子串
+ * 注意 ch[0] 废弃不用
  * @param {SString *} Sub 指向串的指针
  * @param {SString} S 串
  * @param {int} pos 拷贝的起始位置
@@ -61,6 +62,33 @@ bool SubString(SString * Sub, SString S, int pos, int len) {
   (*Sub).length = len; // 一定要记得写这行代码!!!
 
   return true;
+
+}
+
+/**
+ * 子串定位
+ * 若主串 S 中存在与串 T 值相同的子串，则返回该子串第一次出现的位置，否则返回 0
+ * 注意 ch[0] 废弃不用
+ * @param {SString} S 主串
+ * @param {SString} T 测试串
+ */
+int Index(SString S, SString T) {
+
+  SString sub; // 用于缓存从主串 S 中截取的待比对的子串
+
+  // 控制最多能截取比对几次
+  for (int i = 1; i <= S.length - T.length + 1; i ++) {
+
+    SubString(&sub, S, i, T.length);
+
+    if (StrCompare(sub, T) == 0) {
+      return i;
+    }
+
+  }
+
+  // 找不到就返回
+  return 0;
 
 }
 
