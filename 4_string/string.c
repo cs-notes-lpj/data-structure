@@ -21,12 +21,12 @@ typedef struct {
 
 /**
  * 比较串的大小
- * 注意 ch[0] 废弃不用，因此遍历从 i = 1 开始
  * @param {SString} S 串
  * @param {SString} T 串
  * - 若 S > T，则返回值 > 0
  * - 若 S = T，则返回值 = 0
  * - 若 S < T，则返回值 < 0
+ * - 注意 ch[0] 废弃不用，因此遍历从 i = 1 开始
  */
 int StrCompare(SString S, SString T) {
   // 首先比较相同长度的前缀，先出现 ASCII 码大的字符的串就大
@@ -42,12 +42,12 @@ int StrCompare(SString S, SString T) {
 
 /**
  * 子串拷贝
- * 用 Sub 返回串 S 的第 pos 个字符起长度为 len 的子串
- * 注意 ch[0] 废弃不用
  * @param {SString *} Sub 指向串的指针
  * @param {SString} S 串
  * @param {int} pos 拷贝的起始位置
  * @param {int} len 拷贝的长度
+ * - 用 Sub 返回串 S 的第 pos 个字符起长度为 len 的子串
+ * - 注意 ch[0] 废弃不用
  */
 bool SubString(SString * Sub, SString S, int pos, int len) {
   // 判断子串范围是否越界
@@ -66,11 +66,11 @@ bool SubString(SString * Sub, SString S, int pos, int len) {
 }
 
 /**
- * 子串定位
- * 若主串 S 中存在与串 T 值相同的子串，则返回该子串第一次出现的位置，否则返回 0
- * 注意 ch[0] 废弃不用
+ * 子串定位（使用了字符串的朴素模式匹配算法的思想）
  * @param {SString} S 主串
- * @param {SString} T 测试串
+ * @param {SString} T 测试串（模式串）
+ * - 若主串 S 中存在与串 T 值相同的子串，则返回该子串第一次出现的位置，否则返回 0
+ * - 注意 ch[0] 废弃不用
  */
 int Index(SString S, SString T) {
 
@@ -89,6 +89,34 @@ int Index(SString S, SString T) {
 
   // 找不到就返回
   return 0;
+
+}
+
+/**
+ * 字符串的朴素模式匹配算法（暴力解）
+ * @param {SString} S 主串
+ * @param {SString} T 模式串
+ * - 若主串 S 中存在与模式串 T 值相同的子串，则返回该子串第一次出现的位置，否则返回 0
+ * - 注意 ch[0] 废弃不用
+ */
+int naivePatternMatchingAlgorithm(SString S, SString T) {
+
+  int i = 1,
+      j = 1;
+
+  while (i <= S.length && j <= T.length) {
+
+    if (S.ch[i] == T.ch[j]) {
+      i++;
+      j++;
+    } else {
+      i = i - j + 2;
+      j = 1;
+    }
+
+  }
+
+  return (j > T.length ? (i - T.length) : 0);
 
 }
 
