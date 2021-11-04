@@ -46,6 +46,7 @@
 - 串：4_string/
   - [x] 比较串的大小 & 子串拷贝 & 子串定位：string.c
   - [x] 字符串的朴素模式匹配算法（暴力解）：string.c
+  - [] KMP算法（对字符串的朴素模式匹配算法的优化）：string.c
 
 - 查找算法：find/
   - [x] 二分查找：erFenChaZhao.c
