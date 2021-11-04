@@ -120,6 +120,36 @@ int naivePatternMatchingAlgorithm(SString S, SString T) {
 
 }
 
+/**
+ * 字符串的 KMP 模式匹配算法（对朴素模式匹配的优化）
+ * @param {SString} S 主串
+ * @param {SString} T 模式串
+ * @param {int[]} next 根据模式串算出的 next 数组
+ * - 若主串 S 中存在与模式串 T 值相同的子串，则返回该子串第一次出现的位置，否则返回 0
+ * - 注意 ch[0] 废弃不用
+ */
+int Index_KMP(SString S, SString T, int next[]) {
+
+  int i = 1,
+      j = 1;
+
+  while (i <= S.length && j <= T.length) {
+
+    if (S.ch[i] == T.ch[j] || j == 0) { // 判断 j == 0 的情况是因为我们对代码逻辑做了形式上的统一
+      // 继续比较后继字符
+      i++;
+      j++;
+    } else {
+      // 模式串右移
+      j = next[j];
+    }
+
+  }
+
+  return (j > T.length ? (i - T.length) : 0);
+
+}
+
 int main() {
   return 0;
 }
