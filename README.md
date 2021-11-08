@@ -48,6 +48,9 @@
   - [x] 字符串的朴素模式匹配算法（暴力解）：string.c
   - [x] KMP算法（优化解，掌握了 KMP 的优化思路和算法思想，掌握了根据模式串手算 next 数组的方法）：string.c
 
+- 树：5_tree/
+  - [x] 二叉树的先、中、后序遍历 & 后序遍历的应用之求树高：order.c
+
 - 查找算法：find/
   - [x] 二分查找：erFenChaZhao.c
 #### todo
