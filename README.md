@@ -54,6 +54,10 @@
 
 - 查找算法：find/
   - [x] 二分查找：erFenChaZhao.c
+
+- 排序算法：sort/
+  - [x] 插入排序：insertSort.c
+
 #### todo
 
 对于中缀表达式 => 后缀表达式（逆波兰式）
