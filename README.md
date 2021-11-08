@@ -56,7 +56,7 @@
   - [x] 二分查找：erFenChaZhao.c
 
 - 排序算法：sort/
-  - [x] 插入排序：insertSort.c
+  - [x] 直接插入排序 & 折半插入排序：insertSort.c
 
 #### todo
 
