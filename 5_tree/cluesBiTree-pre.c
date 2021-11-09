@@ -1,5 +1,5 @@
 /**
- * 将二叉树中序线索化 ==得到==> 中序线索二叉树
+ * 将二叉树先序线索化 ==得到==> 先序线索二叉树
  */
 
 #include <stdio.h>
@@ -52,30 +52,33 @@ void _visit(cluesBiNode * curNode) {
 
 }
 
-// 中序遍历二叉树
-void _midOrder(cluesBiTree T) {
+// 先序遍历二叉树
+void _preOrder(cluesBiTree T) {
   if (T == NULL) { return; }
 
-  _midOrder(T->lChild);
   _visit(T);
-  _midOrder(T->rChild);
+  if (T->lTag == 0) {
+    _preOrder(T->lChild);
+  }
+  _preOrder(T->rChild);
 }
 
 
-// 将二叉树中序线索化
-void clueBiTree(cluesBiTree T) {
+// 将二叉树先序线索化
+void clueBiTree_pre(cluesBiTree T) {
   if (T == NULL) { return; }
 
-  // 初始化辅助变量（否则代码是一次性的，对二叉树执行一次中序线索化就把辅助变量污染了）
+  // 初始化辅助变量（否则代码是一次性的，对二叉树执行一次先序线索化就把辅助变量污染了）
   _prePtr = NULL;
 
-  // 一边中序遍历二叉树，一边将结点线索化
-  _midOrder(T);
+  // 一边先序遍历二叉树，一边将结点线索化
+  _preOrder(T);
 
   // 把遍历的最后一个结点的 rChild 线索化
   if (_prePtr->rChild == NULL) {
     _prePtr->rTag = 1;
   }
+
 }
 
 int main() {
