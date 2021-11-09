@@ -1,5 +1,3 @@
-## 数据结构与算法
-
 <img src='https://gitee.com/pj-l/imgs-1/raw/master/screenShot/head.png'></img>
 
 #### 已实现的数据结构与算法
