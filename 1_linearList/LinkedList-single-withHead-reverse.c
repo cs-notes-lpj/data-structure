@@ -68,7 +68,7 @@ void PrintList(LinkList list) {
   printf("\n");
 }
 
-// 原地逆序带头结点的单链表
+// 原地逆序带头结点的单链表（头插法）
 LinkList reverseList(LinkList * list) {
   if (*list == NULL) {
     printf("逆序单链表失败，你传进来的是个 NULL...\n");
@@ -86,16 +86,10 @@ LinkList reverseList(LinkList * list) {
   }
 
   LNode * ptr = (*list)->next;
-  LNode * ptrNext = ptr->next;
-
-  while (ptr->next != NULL) {
-
-    ptr->next = ptr->next->next;  // 断前
-    ptrNext->next = (*list)->next;// 断后
-    (*list)->next = ptrNext;
-
-    ptrNext = ptr->next;
-
+  for (LNode * cur = ptr->next; cur != NULL; cur = ptr->next) {
+    ptr->next = cur->next;     // 断前
+    cur->next = (*list)->next; // 断后
+    (*list)->next = cur;       // 调整头结点的 next 指向
   }
 
   return (*list);
