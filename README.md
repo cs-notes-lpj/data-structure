@@ -58,6 +58,7 @@
 
 - 排序算法：sort/
   - [x] 直接插入排序 & 折半插入排序：insertSort.c
+  - [x] 冒泡排序：bubbleSort.c
 
 #### todo
 
