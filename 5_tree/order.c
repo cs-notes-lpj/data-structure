@@ -17,6 +17,18 @@ struct Node {
 typedef struct Node BiNode;
 typedef struct Node * BiTree;
 
+/*-- 伪代码：任意指定结点，找其前驱（土方法） --*/
+// BiNode * prePtr = NULL;
+// BiNode * finalPtr = NULL;
+// visit(BiNode * curNode, BiNode * target) {
+//   if (curNode != target) {
+//     prePtr = curNode;
+//   } else {
+//     finalPtr = prePtr;
+//   }
+// }
+/*-- 伪代码：任意指定结点，找其前驱（土方法） --*/
+
 // 先序遍历
 void preOrder(BiTree T) {
   if (T == NULL) { return; }
