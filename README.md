@@ -1,6 +1,6 @@
-## 数据结构与算法代码实现
+## 数据结构与算法
 
-> 实现《数据结构与算法》课程中基本且重要的数据结构 - 参考：王道 & 天勤
+<img src='https://gitee.com/pj-l/imgs-1/raw/master/screenShot/head.png'></img>
 
 #### 已实现的数据结构与算法
 
