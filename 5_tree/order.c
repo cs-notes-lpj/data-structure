@@ -17,7 +17,7 @@ struct Node {
 typedef struct Node BiNode;
 typedef struct Node * BiTree;
 
-/*-- 伪代码：任意指定结点，找其前驱（土方法） --*/
+/*-- 任意指定结点，找其前驱（土方法，伪代码） --*/
 // BiNode * prePtr = NULL;
 // BiNode * finalPtr = NULL;
 // visit(BiNode * curNode, BiNode * target) {
@@ -27,7 +27,7 @@ typedef struct Node * BiTree;
 //     finalPtr = prePtr;
 //   }
 // }
-/*-- 伪代码：任意指定结点，找其前驱（土方法） --*/
+/*-- 任意指定结点，找其前驱（土方法，伪代码） --*/
 
 // 先序遍历
 void preOrder(BiTree T) {
