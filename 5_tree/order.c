@@ -20,7 +20,7 @@ typedef struct Node * BiTree;
 /*-- 任意指定结点，找其前驱（土方法，伪代码） --*/
 // BiNode * prePtr = NULL;
 // BiNode * finalPtr = NULL;
-// visit(BiNode * curNode, BiNode * target) {
+// void visit(BiNode * curNode, BiNode * target) {
 //   if (curNode != target) {
 //     prePtr = curNode;
 //   } else {
