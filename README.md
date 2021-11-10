@@ -61,6 +61,9 @@
   - [x] 冒泡排序：bubbleSort.c
   - [x] 简单选择排序：simpleSelectSort.c
 
+- 其他算法题目：algorithms/
+  - [x] 数组循环右移：数组循环右移.c
+
 #### todo
 
 对于中缀表达式 => 后缀表达式（逆波兰式）
