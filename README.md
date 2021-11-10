@@ -52,6 +52,7 @@
   - [x] 将二叉树中序线索化：cluesBiTree.c
   - [x] 将二叉树先序线索化：cluesBiTree-pre.c
   - [ ] 将二叉树后序线索化（同中序线索化）
+  - [ ] 线索二叉树找前驱/后继（分析思路见笔记）
 
 - 查找算法：find/
   - [x] 二分查找：erFenChaZhao.c
