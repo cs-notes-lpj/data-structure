@@ -11,12 +11,16 @@ void _printArr(int arr[], int arrLen) {
   printf("\n");
 }
 
+/**
+ * 一次划分
+ * 比中枢元素小的都放左边，比中枢元素大的都放右边
+ * 两端交替逼近法（因为只有一个辅助空间 => 空间复杂度 O(1)）
+ */
 int _partition(int arr[], int low, int high) {
 
   // 规定中枢元素
   int pivot = arr[low];
 
-  // 进行一次划分（比中枢元素小的都放左边，比中枢元素大的都放右边，两端交替逼近法）
   while (low < high) {
 
     // 从右边搬一个小的，放左边
@@ -37,7 +41,7 @@ int _partition(int arr[], int low, int high) {
 
 void quickSort(int arr[], int low, int high) {
 
-  if (low >= high) {
+  if (low >= high || low < 0 || high < 0) {
     return;
   }
 

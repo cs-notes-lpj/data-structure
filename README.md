@@ -64,7 +64,8 @@
   - [x] 简单选择排序：simpleSelectSort.c
 
 - 其他算法题目：algorithms/
-  - [x] 数组循环右移：数组循环右移.c
+  - [x] 斐波纳契数列.c
+  - [x] 数组循环右移.c
 
 #### todo
 
