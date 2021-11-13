@@ -82,6 +82,23 @@ bool insert(BST_Tree * T, char key) {
 
 }
 
+bool create_BST(BST_Tree * T, int arr[], int arrLen) {
+
+  if (arrLen < 1) {
+    return false;
+  }
+
+  *T = NULL;
+
+  for (int i = 0; i < arrLen; i ++) {
+    // &(*T) == T
+    insert(T, arr[i]);
+  }
+
+  return true;
+
+}
+
 int main() {
   return 0;
 }
