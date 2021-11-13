@@ -62,6 +62,7 @@
   - [x] 冒泡排序：bubbleSort.c
   - [x] 快速排序：quickSort.c
   - [x] 简单选择排序：simpleSelectSort.c
+  - [x] 二路归并排序：mergeSort.c
 
 - 其他算法题目：algorithms/
   - [x] 斐波纳契数列.c
