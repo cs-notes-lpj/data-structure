@@ -125,8 +125,9 @@ int naivePatternMatchingAlgorithm(SString S, SString T) {
  * @param {SString} S 主串
  * @param {SString} T 模式串
  * @param {int[]} next 根据模式串算出的 next 数组
- * - 若主串 S 中存在与模式串 T 值相同的子串，则返回该子串第一次出现的位置，否则返回 0
- * - 注意 ch[0] 废弃不用
+ * - 若主串 S 中存在与模式串 T 值相同的子串，则返回该子串第一次出现的位置，否则返回 0（因为 ch[0] 废弃不用）
+ * 
+ * - 当第一个字符就发生失配时，直接对比下一个模式串（规定第 1 个字符发生失配时给 j 赋值为 0，即 next[1] 为 0，这样就能让代码的处理逻辑更统一）
  */
 int Index_KMP(SString S, SString T, int next[]) {
 
@@ -135,8 +136,7 @@ int Index_KMP(SString S, SString T, int next[]) {
 
   while (i <= S.length && j <= T.length) {
 
-    if (S.ch[i] == T.ch[j] || j == 0) { // 判断 j == 0 的情况是因为我们对代码逻辑做了形式上的统一
-      // 继续比较后继字符
+    if (j == 0 || S.ch[i] == T.ch[j]) {
       i++;
       j++;
     } else {
