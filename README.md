@@ -56,6 +56,9 @@
   - [x] 二叉排序树：BST.c
   - [x] 平衡的二叉排序树（AVL树）：AVL.c
 
+- 图：6_graph/
+  - [x] 图，边无权值，邻接矩阵法存储边：graph.c
+
 - 查找算法：find/
   - [x] 二分查找：erFenChaZhao.c
 
