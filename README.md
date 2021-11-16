@@ -57,7 +57,8 @@
   - [x] 平衡的二叉排序树（AVL树）：AVL.c
 
 - 图：6_graph/
-  - [x] 图，边无权值，邻接矩阵法存储边：graph.c
+  - [x] 图，边 「无」 权值，邻接矩阵法存储 「边」：graph.c
+  - [x] 带权图，邻接矩阵法存储 「边的权值」：weighted-graph.c
 
 - 查找算法：find/
   - [x] 二分查找：erFenChaZhao.c

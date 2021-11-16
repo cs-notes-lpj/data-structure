@@ -1,5 +1,5 @@
 /**
- * 图
+ * 图，边 「无」 权值，邻接矩阵法存储边
  */
 
 #include <stdio.h>
@@ -16,7 +16,6 @@ typedef struct {
 } Vertex;
 /*-- 定义图的顶点 --*/
 
-
 /*-- 定义图 --*/
 #define maxVertexNum 6 // 图的最多顶点数（图的最大阶数）
 
@@ -27,7 +26,6 @@ typedef struct {
   int edgNum; // 记录图的当前边/弧数
 } Graph;
 /*-- 定义图 --*/
-
 
 int main() {
   return 0;
