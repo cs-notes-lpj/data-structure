@@ -1,6 +1,8 @@
 /**
  * 判断回文数
  * 
+ * https://leetcode-cn.com/problems/palindrome-number/solution/hui-wen-shu-by-leetcode-solution/
+ * 
  * ------------------------------------------
  *
  * 这些数肯定不是回文数，直接返回
