@@ -1,5 +1,21 @@
 <img src='https://gitee.com/pj-l/imgs-1/raw/master/screenShot/head.png'></img>
 
+#### 注意事项
+
+<string.h> 中的如下两函数是 「不安全」 的函数，应避免使用
+
+1. char * strcpy(char *restrict dst, const char *restrict src);
+
+2. char * strcat(char *restrict s1, const char *restrict s2);
+
+原因：目的地有可能没有充足的空间
+
+「安全的」 替代品：
+
+1. char * strncpy(char *restrict dst, const char *restrict src, size_t n);
+
+2. char * strncat(char *restrict s1, const char *restrict s2, size_t n);
+
 #### 已实现的数据结构与算法
 
 - 线性表：1_linearList/
@@ -80,6 +96,12 @@
   - [x] 最大公约数问题.c
   - [x] 最小公倍数问题.c
   - [x] 统计字符串长度-字符数组长度.c
+
+- 手写string.h/
+  - [x] my_strlen.c
+  - [x] my_strcmp.c
+  - [ ] my_strcpy.c
+  - [ ] my_strcat.c
 
 #### todo
 
