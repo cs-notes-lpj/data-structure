@@ -2,6 +2,8 @@
 
 #### 注意事项
 
+> 更多关于 <string.h> 的知识参见自己的 .md 笔记总结
+
 <string.h> 中的如下两函数是 「不安全」 的函数，应避免使用
 
 1. char * strcpy(char *restrict dst, const char *restrict src);
@@ -15,6 +17,8 @@
 1. char * strncpy(char *restrict dst, const char *restrict src, size_t n);
 
 2. char * strncat(char *restrict s1, const char *restrict s2, size_t n);
+
+解释：多的参数 size_t n 就是用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
 
 #### 已实现的数据结构与算法
 
@@ -100,8 +104,8 @@
 - 手写string.h/
   - [x] my_strlen.c
   - [x] my_strcmp.c
-  - [ ] my_strcpy.c
-  - [ ] my_strcat.c
+  - [x] my_strcpy.c
+  - [x] my_strcat.c
 
 #### todo
 
