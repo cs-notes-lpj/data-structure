@@ -15,8 +15,6 @@ int cntWords(char str[]) {
 
   int strLen = strlen(str);
 
-  printf("%d\n", strLen);
-
   for (int i = 0; i < strLen; i ++)  {
     if (str[i] != ' ' && flag == 0) { cnt++; flag = 1; }
     if (str[i] == ' ') { flag = 0; }
