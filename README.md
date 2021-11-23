@@ -91,6 +91,7 @@
 - 图：6_graph/
   - [x] 图，边 「无」 权值，邻接矩阵法存储 「边」：graph.c
   - [x] 带权图，邻接矩阵法存储 「边的权值」：weighted-graph.c
+  - [x] 无向图，邻接表法：adjacency-list-graph.c
 
 - 查找算法：find/
   - [x] 二分查找：erFenChaZhao.c
