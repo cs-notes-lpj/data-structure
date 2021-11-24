@@ -17,7 +17,7 @@ typedef struct {
 /*-- 定义图的顶点 --*/
 
 /*-- 定义图 --*/
-#define maxVertexNum 6 // 图的最多顶点数（图的最大阶数）
+#define maxVertexNum 6 // 定义图的最大阶数（即图中最多有多少顶点）
 
 typedef struct {
   Vertex vexs[maxVertexNum];             // 顺序的静态空间，用于存储顶点
