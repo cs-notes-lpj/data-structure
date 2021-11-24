@@ -93,6 +93,7 @@
   - [x] 带权图，邻接矩阵法存储 「边的权值」：weighted-graph.c
   - [x] 无向图，邻接表法：adjacency-list-graph.c
   - [x] 图的广度优先遍历算法，兼容非连通图（伪代码）：BFS.c
+  - [x] 图的深度优先遍历算法，兼容非连通图（伪代码）：DFS.c
 
 - 查找算法：find/
   - [x] 二分查找：erFenChaZhao.c
