@@ -19,19 +19,26 @@ typedef struct {
   @param {Graph} G 连通图
   @param {int}   v 顶点的数组下标
 */
+#define Infinity 99999
 void BFS(Graph G, int v) {
 
-  // 初始化一个标记数组
-  int isVisited[G.vexNum];
-  for (int i = 0; i < G.vexNum; i ++) {
+  const int _vexNum = G.vexNum;
+
+  int d[_vexNum],         // 用于记录顶点到源点的最短路径
+      path[_vexNum],      // 用于记录顶点的直接前驱
+      isVisited[_vexNum]; // 标记数组（Graph_only）
+
+  for (int i = 0; i < _vexNum; i ++) {
+    d[i] = Infinity;
+    path[i] = -1;
     isVisited[i] = false;
   }
 
-  // 初始化一个辅助队列
-  Queue q; initQueue(&q);
+  d[v] = 0; // 源点到自身的最短路径是 0 呀
 
-  // 数组下标 v 入队
-  enQueue(&q, v);
+  /*--------------------BFS_Begin--------------------*/
+
+  Queue q; initQueue(&q); enQueue(&q, v);
 
   while (!isEmpty(q)) {
 
@@ -39,6 +46,8 @@ void BFS(Graph G, int v) {
 
     for (int i = firstNeighbor(G, vex); i >= 0; i = nextNeighbor(G, vex, i)) {
       if (!isVisited[i]) {
+        path[i] = vex;    // 直接前驱是谁（从哪过来的）
+        d[i] = d[vex] + 1;// 到源点的最短路径是多少
         enQueue(&q, i);
       }
     }
