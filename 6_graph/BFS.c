@@ -64,21 +64,17 @@ void BFS(Graph G) {
 void _foo(Graph G, int v) {
 
   // 顶点下标入队
-  enQueue(Q, v);
+  enQueue(&Q, v);
 
   // while ( 队列非空 ) { 出队; 访问; 打上顶点已访问的标记; 将其所有邻接顶点没有被访问过的入队; }
 
   while (!isEmpty(Q)) {
 
-    int vex = deQueue(Q);
-
-    visit(vex);
-
-    visited[vex] = true;
+    int vex = deQueue(&Q); visit(vex); visited[vex] = true;
 
     for (int i = firstNeighbor(G, vex); i >= 0; i = nextNeighbor(G, vex, i)) {
       if (!visited[i]) {
-        enQueue(Q, i);
+        enQueue(&Q, i);
       }
     }
 
