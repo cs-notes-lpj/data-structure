@@ -14,11 +14,35 @@
 */
 
 #include <stdio.h>
+typedef enum { false = 0, true } bool;
+
+bool isFullNum(int num) {
+  int _cnt = 0;
+
+  for (int i = 1; i < num; i ++) {
+    if (num % i == 0) {
+      _cnt += i;
+    }
+  }
+
+  return num == _cnt;
+}
+
+void _printFator(int num) {
+  for (int i = 1; i < num; i ++) {
+    if (num % i == 0) {
+      printf("%d ", i);
+    }
+  }
+  printf("\n");
+}
 
 int main(void) {
 
-  for (int i = 0; i < 1001; i ++) {
-    
+  for (int i = 1; i < 1001; i ++) {
+    if (isFullNum(i)) {
+      printf("%d its factors are ", i); _printFator(i);
+    }
   }
 
   return 0;
