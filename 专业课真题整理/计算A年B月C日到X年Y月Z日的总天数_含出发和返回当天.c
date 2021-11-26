@@ -7,7 +7,7 @@ int _isLeapYear(int year) {
 }
 
 int _intfabs(int x) {
-  return (x < 0 ? (-x) : x);
+  return x < 0 ? -x : x;
 }
 
 int _getdate(const char * date) {
