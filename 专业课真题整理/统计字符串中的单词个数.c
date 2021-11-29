@@ -5,10 +5,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// 只是为了用下 getline 函数
-#include <iostream>
-using namespace std;
-
 int cntWords(char str[]) {
   int cnt = 0,
       flag = 0; // 不是字符
@@ -25,9 +21,8 @@ int cntWords(char str[]) {
 
 int main(void) {
 
-  // char str[100] = "  asd aqwd  qwf   grwe a rr.";
-  char str[100]; cin.getline(str, 100);
-
+  // char str[100]; cin.getline(str, 100);
+  char str[100] = "  asd aqwd  qwf   grwe a rr.";
   printf("单词个数为：%d\n", cntWords(str));
 
   return 0;
