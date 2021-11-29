@@ -1,0 +1,62 @@
+/*
+  顺时针打印矩阵
+
+  [
+    1,  2,  3,  4
+    10, 11, 12, 5  ===> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+    9,  8,  7,  6
+  ]
+
+  [
+    1, 2, 3
+    8, 9, 4 ===> 1, 2, 3, 4, 5, 6, 7, 8, 9
+    7, 6, 5
+  ]
+*/
+
+#include <stdio.h>
+
+int main(void) {
+
+  int arr[][5] = {
+    1,  2,  3,  4,  5,
+    14, 15, 16, 17, 6,
+    13, 20, 19, 18, 7,
+    12, 11, 10, 9,  8
+  };
+
+  const int row = sizeof(arr) / sizeof(arr[0]),
+            col = sizeof(arr[0]) / sizeof(int);
+
+  // 初始化未打印矩阵的边界指针
+  int top = 0,
+      left = 0,
+      bottom = row - 1,
+      right = col - 1;
+
+  while (1) {
+
+    // 从左向右，打印顶行
+    for (int i = left; i <= right; i ++) { printf("%d ", arr[top][i]); }
+    top++;
+    if (top > bottom) { printf("\n"); break; }
+
+    // 从上向下，打印右列
+    for (int i = top; i <= bottom; i ++) { printf("%d ", arr[i][right]); }
+    right--;
+    if (left > right) { printf("\n"); break; }
+
+    // 从右往左，打印底行
+    for (int i = right; i >= left; i --) { printf("%d ", arr[bottom][i]); }
+    bottom--;
+    if (top > bottom) { printf("\n"); break; }
+
+    // 从下往上，打印左列
+    for (int i = bottom; i >= top; i --) { printf("%d ", arr[i][left]); }
+    left++;
+    if (left > right) { printf("\n"); break; }
+
+  }
+
+  return 0;
+}
