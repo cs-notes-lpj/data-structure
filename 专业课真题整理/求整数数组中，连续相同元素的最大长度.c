@@ -15,16 +15,14 @@ int countMaxBlockLength(int arr[], int arrLen) {
       count = 1;
 
   for (int i = 1; i < arrLen; i ++) {
-    if (arr[i] != key) {
+    if (arr[i] == key) {
+      count++;
+    } else {
       if (count > maxBlockLen) { maxBlockLen = count; }
       key = arr[i];
       count = 1;
-    } else {
-      count++;
     }
   }
-
-  if (count > maxBlockLen) { maxBlockLen = count; }
 
   return maxBlockLen;
 
