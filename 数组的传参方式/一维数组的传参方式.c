@@ -1,0 +1,33 @@
+/*
+	一维数组的传参方式小结
+*/
+
+#include <stdio.h>
+
+void printArr_1(int arr[], const int len);
+void printArr_2(int* arr, const int len);
+
+int main(void) {
+	int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+
+	printArr_1(arr, sizeof(arr) / sizeof(int));
+	printArr_2(arr, sizeof(arr) / sizeof(int));
+
+	return 0;
+}
+
+/*----------------Source codes for test are under below.----------------*/
+
+void printArr_1(int arr[], const int len) {
+	for (int i = 0; i < len; i ++) {
+			printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
+
+void printArr_2(int* arr, const int len) {
+	for (int i = 0; i < len; i ++) {
+			printf("%d ", arr[i]);
+	}
+	printf("\n");
+}

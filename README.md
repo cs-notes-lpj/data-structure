@@ -1,33 +1,36 @@
 ## 数据结构与算法的代码实现
 
-- 本仓库的代码实现参考了：
-  - 浙大翁恺老师-C语言
-  - 王道-数据结构
-  - 天勤-数据结构
-  - 青岛大学王卓老师-数据结构与算法
-  - bilibili
+- 参考：
+  - C语言-翁恺-浙大
+  - 数据结构与算法-王道
+  - 数据结构与算法-天勤
+  - 数据结构与算法-王卓-青岛大学
+  - [《C++ 参考手册》](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
+  - [《算法笔记》](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
+  - [《C/C++ 语法使用总结》](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
+  - [《关于已经废除的 gets() 函数的新方案》](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
 
-- 向他们表示感谢 ！
+#### 针对研考真题
 
-#### 递归解题思路
+- 需要排序时，推荐直接调用 C++ 的 ```sort``` 函数，将主要精力放在题目的逻辑本身
+
+#### 递归
+
+> 注意：但凡递归均可能 「栈溢出」
 
 1. 想出口
 
 2. 想递推
 
-注意：但凡递归均可能 「栈溢出」
+#### 动态规划
 
-#### 动态规划思想
+将问题的求解划分为多个阶段，阶段之间有某种递进关系
 
-将问题的求解分为多个阶段，阶段之间有种递进的关系
-
----
-
-#### 注意事项
+#### 关于 <string.h> 的安全性
 
 > 更多关于 <string.h> 的知识参见自己的 .md 笔记总结
 
-<string.h> 中的如下两函数是 「不安全」 的函数，应避免使用
+<string.h> 中的如下两函数是 「不安全」 的，应避免使用
 
 1. char * strcpy(char *restrict dst, const char *restrict src);
 
@@ -41,15 +44,13 @@
 
 2. char * strncat(char *restrict s1, const char *restrict s2, size_t n);
 
-解释：多的参数 size_t n 就是用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
+解释：多的参数 size_t n 用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
 
----
+#### 编译代码的注意事项
 
-undefined reference to `pow`
+- 要使用库 math.h，编译代码时需添加 ```-lm``` 参数，否则可能报 ```undefined reference``` 的错误
 
-math.h 不是 C 的库，要使用 math.h，编译时须加 -lm 选项
-
----
+- 比如 ```pow``` 函数
 
 #### 已实现的数据结构与算法
 
@@ -131,6 +132,10 @@ math.h 不是 C 的库，要使用 math.h，编译时须加 -lm 选项
   - [x] my_strcmp.c
   - [x] my_strcpy.c
   - [x] my_strcat.c
+
+- 数组的传参方式/
+  - [x] 一维数组的传参方式.c
+  - [x] 二维数组的传参方式.c
 
 - 算法题目整理/
   - [x] 求e的值.c
