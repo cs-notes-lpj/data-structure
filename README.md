@@ -1,6 +1,6 @@
 ## 数据结构与算法的代码实现
 
-- 参考：
+- 参考 & 总结：
   - C语言-翁恺-浙大
   - 数据结构与算法-王道
   - 数据结构与算法-天勤
@@ -12,39 +12,24 @@
 
 #### 针对研考真题
 
-- 需要排序时，推荐直接调用 C++ 的 ```sort``` 函数，将主要精力放在题目的逻辑本身
+- 递归思路
+  - 1. 想出口
+  - 2. 想递推
+  - 3. 注意但凡递归均可能 「栈溢出」
 
-#### 递归
+- 动态规划思路
+  - 将问题的求解划分为多个阶段，阶段之间有某种递进关系
 
-> 注意：但凡递归均可能 「栈溢出」
-
-1. 想出口
-
-2. 想递推
-
-#### 动态规划
-
-将问题的求解划分为多个阶段，阶段之间有某种递进关系
-
-#### 关于 <string.h> 的安全性
-
-> 更多关于 <string.h> 的知识参见自己的 .md 笔记总结
-
-<string.h> 中的如下两函数是 「不安全」 的，应避免使用
-
-1. char * strcpy(char *restrict dst, const char *restrict src);
-
-2. char * strcat(char *restrict s1, const char *restrict s2);
-
-原因：目的地有可能没有充足的空间
-
-「安全的」 替代品：
-
-1. char * strncpy(char *restrict dst, const char *restrict src, size_t n);
-
-2. char * strncat(char *restrict s1, const char *restrict s2, size_t n);
-
-解释：多的参数 size_t n 用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
+- 注意事项
+  - 将主要精力放在题目的逻辑本身，题目中的某一步需要排序时，直接调用 C++ 的 ```sort``` 函数
+  - 使用 <string.hh> 时，以下两函数 「不安全」，应避免使用
+    - 1. char * strcpy(char *restrict dst, const char *restrict src);
+    - 2. char * strcat(char *restrict s1, const char *restrict s2);
+  - 原因：目的地可能没有充足的空间；安全的替代品如下
+    - 1. char * strncpy(char *restrict dst, const char *restrict src, size_t n);
+    - 2. char * strncat(char *restrict s1, const char *restrict s2, size_t n);
+  - 解释：新参数 size_t n 用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
+  - 更多关于 <string.h> 的知识参见自己的 .md 笔记总结
 
 #### 编译代码的注意事项
 
