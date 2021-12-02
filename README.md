@@ -22,18 +22,18 @@
 
 - 注意事项
   - 将主要精力放在题目的逻辑本身，题目中的某一步需要排序时，直接调用 C++ 的 ```sort``` 函数
-  - 使用 <string.hh> 时，以下两函数 「不安全」，应避免使用
-    - 1. char * strcpy(char *restrict dst, const char *restrict src);
-    - 2. char * strcat(char *restrict s1, const char *restrict s2);
+  - 使用 <string.h> 时，以下两函数 「不安全」，应避免使用
+    - 1. ```char * strcpy(char *restrict dst, const char *restrict src);```
+    - 2. ```char * strcat(char *restrict s1, const char *restrict s2);```
   - 原因：目的地可能没有充足的空间；安全的替代品如下
-    - 1. char * strncpy(char *restrict dst, const char *restrict src, size_t n);
-    - 2. char * strncat(char *restrict s1, const char *restrict s2, size_t n);
-  - 解释：新参数 size_t n 用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
+    - 1. ```char * strncpy(char *restrict dst, const char *restrict src, size_t n);```
+    - 2. ```char * strncat(char *restrict s1, const char *restrict s2, size_t n);```
+  - 解释：新参数 ```size_t n``` 用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
   - 更多关于 <string.h> 的知识参见自己的 .md 笔记总结
 
 #### 编译代码的注意事项
 
-- 要使用库 math.h，编译代码时需添加 ```-lm``` 参数，否则可能报 ```undefined reference``` 的错误
+- 要使用库 <math.h>，编译代码时需添加 ```-lm``` 参数，否则可能报 ```undefined reference``` 的错误
 
 - 比如 ```pow``` 函数
 
