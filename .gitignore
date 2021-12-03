@@ -1,5 +1,4 @@
-out
 *.out
+.vscode
 package.json
 package-lock.json
-.vscode
