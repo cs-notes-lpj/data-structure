@@ -1,6 +1,21 @@
-## 数据结构与算法的代码实现
+<div align="center">
 
-- 参考 & 总结：
+# 数据结构与算法的代码实现
+
+<a href="https://github.com/Brannua/ds_algorithm/blob/master/LICENSE" target="_blank">
+  <img src="https://img.shields.io/badge/license-MIT-ff00ff.svg?style=flat-square">
+</a>
+<a href="https://liupj.top" target="_blank">
+  <img src="https://img.shields.io/badge/blog-夏与冬的小站-000000.svg?style=flat-square&logo=Hexo">
+</a>
+<a href="https://www.github.com/brannua" target="_blank">
+  <img src="https://img.shields.io/badge/author-Lpj-000000.svg?style=flat-square&logo=GitHub">
+</a>
+
+</div>
+
+## 参考 & 总结
+
   - C语言-翁恺-浙大
   - 数据结构与算法-王道
   - 数据结构与算法-天勤
@@ -10,7 +25,7 @@
   - [《C/C++ 语法使用总结》](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
   - [《关于已经废除的 gets() 函数的新方案》](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
 
-#### 针对算法题目
+## 针对算法题目
 
 - 递归思想
   - 想出口
@@ -35,13 +50,13 @@
   - 解释：新参数 ```size_t n``` 用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
   - 更多关于 <string.h> 的知识参见自己的 .md 笔记总结
 
-#### 编译代码的注意事项
+## 编译代码的注意事项
 
 - 要使用库 <math.h>，编译代码时需添加 ```-lm``` 参数，否则可能报 ```undefined reference``` 的错误
 
 - 比如 ```pow``` 函数
 
-#### 已实现的数据结构与算法
+## 已实现的数据结构与算法
 
 - 线性表：1_linearList/
   - 顺序表
@@ -167,7 +182,7 @@
   - [x] 输入一个n阶矩阵，输出每一列的最大值的和.c
   - [x] 找出数组中任意一个重复的数字.c
 
-#### todo
+## todo
 
 对于中缀表达式 => 后缀表达式（逆波兰式）
 
@@ -190,5 +205,3 @@
   3. 字符转整型，统一用 ascii 码存；即 int 数组
   4. 将 12 存成 '1' 和 '2', 统一用 char 型数组存，只不过在数组中添加空格，用来分割操作数和操作符
   5. 用指针型数组，即数组元素都是一个个的地址，这些地址有可能指向的是数，有可能指向的是字符
-
----
