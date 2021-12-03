@@ -16,14 +16,14 @@
 
 ## 参考 & 总结
 
-  - C语言-翁恺-浙大
-  - 数据结构与算法-王道
-  - 数据结构与算法-天勤
-  - 数据结构与算法-王卓-青岛大学
-  - [《算法笔记》](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
-  - [《C++ 参考手册》](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
-  - [《C/C++ 语法使用总结》](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
-  - [《关于已经废除的 gets() 函数的新方案》](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
+- C语言-翁恺-浙大-mooc
+- 数据结构与算法-王道
+- 数据结构与算法-天勤
+- 数据结构与算法-王卓-青岛大学-bilibili
+- [《算法笔记》](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
+- [《C++ 参考手册》](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
+- [《C/C++ 语法使用总结》](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
+- [《关于已经废除的 gets() 函数的新方案》](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
 
 ## 针对算法题目
 
