@@ -25,7 +25,7 @@
 - [C/C++ 语法使用总结](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
 - [关于已经废除的 gets() 函数的新方案](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
 
-## 针对算法题目
+## 算法思想小结
 
 - 递归思想
   - 想出口
@@ -39,9 +39,12 @@
 
 - 不同算法思想可以结合使用，比如求解 0-1 背包问题时，动态规划思想所谓的状态转移方程其实就是递归的递推式
 
-- 注意事项
-  - 将主要精力放在题目的逻辑本身，题目中的某一步需要排序时，直接调用 C++ 的 ```sort``` 函数
-  - 使用 <string.h> 时，以下两函数 「不安全」，应避免使用
+## 库函数使用注意事项
+
+- 将主要精力放在题目的逻辑本身，题目中的某一步需要排序时，直接调用 C++ 的 ```sort``` 函数
+
+- <string.h>
+  - 以下两函数 「不安全」，应避免使用
     - ```char * strcpy(char *restrict dst, const char *restrict src);```
     - ```char * strcat(char *restrict s1, const char *restrict s2);```
   - 原因：目的地可能没有充足的空间；安全的替代品如下
@@ -50,11 +53,9 @@
   - 解释：新参数 ```size_t n``` 用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
   - 更多关于 <string.h> 的知识参见自己的 .md 笔记总结
 
-## 编译代码的注意事项
-
-- 要使用库 <math.h>，编译代码时需添加 ```-lm``` 参数，否则可能报 ```undefined reference``` 的错误
-
-- 比如 ```pow``` 函数
+- <math.h>
+  - 编译需添加 ```-lm``` 参数，否则可能报 ```undefined reference``` 的错误
+  - 如 ```pow``` 函数
 
 ## 已实现的数据结构与算法
 
