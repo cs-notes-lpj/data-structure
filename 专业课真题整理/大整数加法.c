@@ -19,6 +19,7 @@ void _initBigN(bigN * a, int size) {
 
 bigN _change(char str[]) {
   bigN res;
+
   res.len = strlen(str);
 
   for (int i = 0; i < res.len; i ++) {
