@@ -23,7 +23,7 @@
 - [算法笔记](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
 - [C++ 参考手册](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
 - [C/C++ 语法使用总结](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
-- [关于已经废除的 gets() 函数的新方案](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
+- [用 cin.getline() 取代 gets()](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
 
 ## 算法思想小结
 
