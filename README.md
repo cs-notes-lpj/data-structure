@@ -122,10 +122,13 @@
   - [x] 图的深度优先遍历算法，兼容非连通图（伪代码）：DFS.c
   - [x] 单源最短路径问题-无权图-基于BFS算法：oneSourceMinLen-BFS.c
 
-- 查找算法：find/
+- 堆：7_heap/
+  - [x] 将完全二叉树自底向上调整为大根堆_&_基于大根堆的堆排序.c（逻辑视角_大根堆的构建，存储视角_基于大根堆的堆排序）
+
+- 查找算法：8_find/
   - [x] 二分查找：erFenChaZhao.c
 
-- 排序算法：sort/
+- 排序算法：9_sort/
   - [x] 直接插入排序 & 折半插入排序：insertSort.c
   - [x] 冒泡排序：bubbleSort.c
   - [x] 快速排序：quickSort.c
