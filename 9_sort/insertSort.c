@@ -10,7 +10,7 @@ void _printArr(int arr[], int arrLen) {
   printf("\n");
 }
 
-// 直接插入排序
+// 直接插入排序（类比摸扑克牌的思想）
 void insertSort(int arr[], int arrLen) {
 
   if (arrLen < 2) { return; }
@@ -23,13 +23,14 @@ void insertSort(int arr[], int arrLen) {
 
     // 腾位置
     int j;
+
     for (j = i - 1; j >= 0; j --) {
 
-      if (tmp >= arr[j]) {
+      if (tmp < arr[j]) {
+        arr[j + 1] = arr[j];
+      } else {
         break;
       }
-
-      arr[j + 1] = arr[j];
 
     }
 
