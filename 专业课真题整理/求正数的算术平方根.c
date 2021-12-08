@@ -39,10 +39,9 @@ void printSquareRoot(double num) {
     num < 1.0 =算术平方根属于=> (num, 1.0)
   */
 
-  double left = num > 1.0 ? 1.0 : num;
-  double right = num > 1.0 ? num : 1.0;
-
-  double center;
+  double left = num > 1.0 ? 1.0 : num,
+         right = num > 1.0 ? num : 1.0,
+         center;
 
   while (right - left >= 1E-6) {
     center = (left + right) / 2.0;
@@ -72,8 +71,8 @@ double _fabs(double num) {
 
 void printSquareRoot_pro(double num) {
 
-  double pre = num;
-  double this = (pre + num / pre) / 2.0;
+  double pre = num,
+         this = (pre + num / pre) / 2.0;
 
   while (_fabs(pre - this) >= 1E-6) {
     pre = this;
