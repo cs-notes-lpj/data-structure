@@ -48,6 +48,5 @@ int main() {
 
   bubbleSort(arr, arrlen);
   _printArr(arr, arrlen);
-
   return 0;
 }
