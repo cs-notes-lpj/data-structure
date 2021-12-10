@@ -1,7 +1,5 @@
 /**
  * 单源最短路径问题的 BFS 算法实现 - 只适用于每条边的权值都相同的图
- * 
- * 在 BFS 算法的基础上，visit 一个顶点时，将其最短路径长度记录到 d[]，并在 path[] 中记录其前驱结点，搞定
  */
 
 #include <stdio.h>
@@ -46,10 +44,12 @@ void BFS(Graph G, int v) {
 
     int vex = deQueue(&q); visit(vex); isVisited[vex] = true;
 
+    const int curLen = d[vex] + 1;
+
     for (int i = firstNeighbor(G, vex); i >= 0; i = nextNeighbor(G, vex, i)) {
       if (!isVisited[i]) {
         path[i] = vex;    // 直接前驱是谁（从哪过来的）
-        d[i] = d[vex] + 1;// 到源点的最短路径是多少
+        d[i] = curLen;    // 到源点的最短路径是多少
         enQueue(&q, i);
       }
     }
