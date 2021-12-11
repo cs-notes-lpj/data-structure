@@ -188,7 +188,8 @@ ADT Complex {
   - [x] 二分查找：erFenChaZhao.c
 
 - 排序算法：9_sort/
-  - [x] 直接插入排序 & 折半插入排序：insertSort.c
+  - [x] 直接插入排序：insertSort.c
+  - [x] 折半插入排序：insertSort-erFen.c
   - [x] 冒泡排序：bubbleSort.c
   - [x] 快速排序：quickSort.c
   - [x] 简单选择排序：simpleSelectSort.c
