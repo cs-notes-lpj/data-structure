@@ -16,7 +16,7 @@ void insertSort(int arr[], int arrLen) {
 
   if (arrLen < 3) { return; }
 
-  // 将各元素插入已排好序的序列中
+  // 将待排序元素插入有序子序列中
   for (int i = 2; i < arrLen; i ++) {
 
     // 摸一张牌
