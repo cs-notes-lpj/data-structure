@@ -2,7 +2,7 @@
  * 直接插入排序（类比摸扑克牌的思想~）
  */
 #include <stdio.h>
-#define Empty -9999
+#define Empty -9999 // 1. 使数组下标和元素位序保持一致 2. 可被用作数据缓存空间
 
 void _printArr(int arr[], int arrLen) {
   for (int i = 1; i < arrLen; i ++) {
@@ -11,10 +11,7 @@ void _printArr(int arr[], int arrLen) {
   printf("\n");
 }
 
-/**
- * 直接插入排序（类比摸扑克牌的思想）
- * 注意：本算法 arr[0] 是个空位置
- */
+// 注意：本算法 arr[0] 是个空位置
 void insertSort(int arr[], int arrLen) {
 
   if (arrLen < 3) { return; }

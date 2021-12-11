@@ -57,4 +57,5 @@ int main() {
   simpleSelectSort(arr, arrlen);
   _printArr(arr, arrlen);
 
+  return 0;
 }
