@@ -25,7 +25,7 @@ void insertSort_erFen(int arr[], int arrLen) {
         high = i - 1;
 
     for (int mid = (low + high) / 2; low <= high; mid = (low + high) / 2) {
-      // arr[mid] == tmp 时，为保证算法稳定性，应继续在 mid 所指位置右边寻找要插入的位置
+      // 如果想让排序算法是稳定的，那么 arr[mid] == tmp 时，应继续在 mid 位置的右边寻找要插入的位置
       if (arr[mid] <= tmp) {
         low = mid + 1;
       } else {
