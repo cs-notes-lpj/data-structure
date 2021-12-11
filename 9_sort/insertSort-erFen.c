@@ -33,12 +33,10 @@ void insertSort_erFen(int arr[], int arrLen) {
       }
     }
 
-    // 腾位置
+    // 当前 low 位置就是要插入的位置，先腾位置，然后插入
     for (int j = i - 1; j >= low; j--) {
       arr[j + 1] = arr[j];
     }
-
-    // 插入
     arr[low] = tmp;
 
   }
