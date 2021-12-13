@@ -5,7 +5,7 @@
 
 int findOne(int arr[], int arrLen) {
 
-  // from cpp-library <algorithm> which is basing on quick_sort fn.
+  // The sort fn basing on quick_sort fn is picked from the cpp-library <algorithm>.
   sort(arr, arr + arrLen);
 
   int resIdx = 0;
