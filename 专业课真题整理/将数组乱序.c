@@ -16,7 +16,7 @@ int main(void) {
 	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 },
 		arrLen = sizeof(arr) / sizeof(int);
 
-	// 初始化随机数种子，用当前时钟
+	// 用当前时钟来初始化随机数种子
 	srand((unsigned)time(NULL));
 
 	// 初始化次数
