@@ -55,9 +55,8 @@ int arrFilter(int arr[], int arrLen) {
   int pos = 1;
 
   for (int i = 1; i < arrLen; i ++) {
-    if (arr[i] != arr[i - 1]) {
-      arr[pos] = arr[i];
-      pos++;
+    if ( arr[i] != arr[pos - 1] ) {
+      arr[pos++] = arr[i];
     }
   }
 
