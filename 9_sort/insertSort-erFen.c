@@ -1,6 +1,8 @@
+
 /**
  * 折半插入排序（就是使用折半查找算法，在有序子序列中查找要插入的位置）
  */
+
 #include <stdio.h>
 #define Empty -9999 // 1. 使数组下标和元素位序保持一致 2. 可被用作数据缓存空间
 
@@ -49,6 +51,5 @@ int main() {
 
   insertSort_erFen(arr, arrLen);
   _printArr(arr, arrLen);
-
   return 0;
 }

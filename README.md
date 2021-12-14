@@ -190,7 +190,7 @@ ADT Complex {
 - 排序算法：9_sort/
   - [x] 直接插入排序：insertSort.c
   - [x] 折半插入排序：insertSort-erFen.c
-  - [ ] 希尔排序
+  - [x] 希尔排序
   - [x] 冒泡排序：bubbleSort.c
   - [x] 快速排序：quickSort.c
   - [x] 简单选择排序：simpleSelectSort.c
