@@ -8,11 +8,11 @@ void printArr_1(int arr[], const int len);
 void printArr_2(int* arr, const int len);
 
 int main(void) {
-	int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+	int arr[] = { 1, 2, 3, 4, 5, 6, 7 },
+		arrLen = sizeof(arr) / sizeof(int);
 
-	printArr_1(arr, sizeof(arr) / sizeof(int));
-	printArr_2(arr, sizeof(arr) / sizeof(int));
-
+	printArr_1(arr, arrLen);
+	printArr_2(arr, arrLen);
 	return 0;
 }
 
@@ -20,14 +20,14 @@ int main(void) {
 
 void printArr_1(int arr[], const int len) {
 	for (int i = 0; i < len; i ++) {
-			printf("%d ", arr[i]);
+		printf("%d ", arr[i]);
 	}
 	printf("\n");
 }
 
 void printArr_2(int* arr, const int len) {
 	for (int i = 0; i < len; i ++) {
-			printf("%d ", arr[i]);
+		printf("%d ", arr[i]);
 	}
 	printf("\n");
 }
