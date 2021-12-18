@@ -16,7 +16,7 @@ int main(void) {
 	return 0;
 }
 
-/*----------------Source codes for test are under below.----------------*/
+/*----------------Source code for test is under below.----------------*/
 
 void printArr_1(int arr[], const int len) {
 	for (int i = 0; i < len; i ++) {
