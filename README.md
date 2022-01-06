@@ -18,17 +18,17 @@
 
 - 总结
 
-  - [ds_algorithm](http://liupj.top/ds_algorithm/#/)
+  - <a href="http://liupj.top/ds_algorithm/#/" target="_blank">ds_algorithm</a>
 
-  - [编码语法基础](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
+  - <a href="https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe" target="_blank">编码语法基础</a>
 
-  - [用 cin.getline() 取代 gets()](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
+  - <a href="https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh" target="_blank">用 cin.getline() 取代 gets()</a>
 
 - 参考了
 
   - C语言-翁恺-浙大-mooc
 
-  - [C++ 参考手册](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
+  - <a href="https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5" target="_blank">C++ 参考手册</a>
 
   - 数据结构与算法-王道-mooc
 
@@ -36,7 +36,7 @@
 
   - 数据结构与算法-王卓-青岛大学-bilibili
 
-  - [算法笔记](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
+  - <a href="https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb" target="_blank">算法笔记</a>
 
 ## 算法思想小结
 
