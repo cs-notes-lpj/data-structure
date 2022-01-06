@@ -2,14 +2,11 @@
 
 # 数据结构与算法的代码实现
 
-<a href="https://github.com/Brannua/ds_algorithm/blob/master/LICENSE" target="_blank">
-  <img src="https://img.shields.io/badge/license-MIT-ff00ff.svg?style=flat-square">
-</a>
-<a href="https://liupj.top" target="_blank">
-  <img src="https://img.shields.io/badge/blog-夏与冬的小站-000000.svg?style=flat-square&logo=Hexo">
-</a>
 <a href="https://www.github.com/brannua" target="_blank">
   <img src="https://img.shields.io/badge/author-Lpj-000000.svg?style=flat-square&logo=GitHub">
+</a>
+<a href="https://github.com/Brannua/ds_algorithm/blob/master/LICENSE" target="_blank">
+  <img src="https://img.shields.io/badge/license-MIT-ff00ff.svg?style=flat-square">
 </a>
 
 </div>
