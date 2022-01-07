@@ -6,23 +6,22 @@
   <img src="https://img.shields.io/badge/author-Lpj-000000.svg?style=flat-square&logo=GitHub">
 </a>
 <a href="https://github.com/Brannua/ds_algorithm/blob/master/LICENSE" target="_blank">
-  <img src="https://img.shields.io/badge/license-MIT-ff00ff.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square">
 </a>
 
 </div>
 
-> 作为一个 🐒 coder 的基本功，本仓库将一直维护下去，希望自己的代码写得越来越好看 🌈 ！
-> 如果你喜欢这个仓库，可以点个 star 🌟 ，让我们一起向更优秀的 programmer 🏅 前进 ！
+> 如果这个仓库对你有帮助，记得点个 star 🌟 哈，让我们一起向更优秀的 programmer 🏅 前进 ！
 
 ## 参考 & 总结
 
 - 总结
 
-  - <a href="http://liupj.top/ds_algorithm/#/" target="_blank">ds_algorithm</a>
+  - [ds_algorithm](http://liupj.top/ds_algorithm/#/)
 
-  - <a href="https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe" target="_blank">编码语法基础</a>
+  - [编码语法基础](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
 
-  - <a href="https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh" target="_blank">用 cin.getline() 取代 gets()</a>
+  - [用 cin.getline() 取代 gets()](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
 
 - 参考了
 
@@ -30,7 +29,7 @@
 
   - [C-软一峰](https://wangdoc.com/clang/)
 
-  - <a href="https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5" target="_blank">C++ 参考手册</a>
+  - [C++ 参考手册](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
 
   - 数据结构与算法-王道-mooc
 
@@ -38,7 +37,7 @@
 
   - 数据结构与算法-王卓-青岛大学-bilibili
 
-  - <a href="https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb" target="_blank">算法笔记</a>
+  - [算法笔记](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
 
 ## 算法思想小结
 
