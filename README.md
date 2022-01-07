@@ -13,15 +13,21 @@
 
 > 如果这个仓库对你有帮助，记得点个 star 🌟 哈，让我们一起向更优秀的 programmer 🏅 前进 ！
 
-## 参考 & 总结
+## docs
 
-- 总结
+- [online](http://liupj.top/ds_algorithm/#/)
 
-  - [ds_algorithm](http://liupj.top/ds_algorithm/#/)
+- offline
 
-  - [编码语法基础](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
+```sh
+npm run serve
+```
 
-  - [用 cin.getline() 取代 gets()](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
+## 其他总结 & 参考
+
+- [编码语法基础](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
+
+- [用 cin.getline() 取代 gets()](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
 
 - 参考了
 
