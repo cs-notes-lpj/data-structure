@@ -52,4 +52,4 @@ docsify serve /path/of/your/docsify-site
 
 #### LICENSE
 
-- [MIT](https://raw.githubusercontent.com/Brannua/docs-template/master/LICENSE)
+- [MIT](https://github.com/Brannua/ds_algorithm/blob/master/LICENSE)
