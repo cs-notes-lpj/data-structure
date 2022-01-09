@@ -17,9 +17,8 @@
 
 - [online](http://liupj.top/ds_algorithm/#/)
 
-- offline
-
 ```sh
+# offline
 npm run serve
 ```
 
