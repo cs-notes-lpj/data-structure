@@ -12,11 +12,8 @@
 
 // 必须说明第二维的长度，但若将实参和形参中的 6 统一改成 5，输出结果就会发生变化，因为 %s 打印字符串的结束标志是 \0，你得给这个看不见的 \0 留位置啊
 void test_1(char arr[][6], const int len);
-
 void test_2_0(char* arr[], const int len);
-
 void test_2_1(char** arr, const int len);
-
 void test_3(char (*arr)[6], const int len);
 
 int main(void) {
@@ -38,12 +35,9 @@ int main(void) {
 
   char arr_3[][6] = { "hello", "world", "good!" };
   test_3(arr_3, sizeof(arr_3) / sizeof(arr_3[0]));
-
 }
 
-
-/*----------------Source codes for test are under below.----------------*/
-
+/*----------------Source code for test is under below.----------------*/
 
 void test_1(char arr[][6], const int len) {
   for (int i = 0; i < len; i ++) {
