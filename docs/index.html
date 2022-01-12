@@ -72,7 +72,7 @@
 
     addBackToTop();
 
-    let DIY = (app_name, search_plugin, sidebar_toggle) => {
+    let _modifyCSS = (app_name, search_plugin) => {
       app_name.style.margin = '0';
       app_name.style.padding = '0';
       app_name.style.height = '4rem';
@@ -82,22 +82,15 @@
       
       search_plugin.style.margin = '0';
       search_plugin.style.padding = '0';
-      search_plugin.style.border = '0';
-
-      sidebar_toggle.innerHTML = 'Touch';
-      sidebar_toggle.style.color = '#fff';
-      sidebar_toggle.style.fontSize = '1.2rem';
-      sidebar_toggle.style.backgroundColor = 'rgb(53, 191, 164)';
     }
 
-    setTimeout(() => {
+    document.addEventListener('DOMContentLoaded', () => {
       let app_name = document.getElementsByClassName('app-name')[0],
-          search_plugin = document.getElementsByClassName('search')[0],
-          sidebar_toggle = document.getElementsByClassName('sidebar-toggle')[0];
+          search_plugin = document.getElementsByClassName('search')[0];
 
+      _modifyCSS(app_name, search_plugin);
       search_plugin.parentNode.insertBefore(app_name, search_plugin);
-      DIY(app_name, search_plugin, sidebar_toggle);
-    }, 1);
+    }, false);
 
   </script>
 </body>
