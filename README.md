@@ -178,7 +178,7 @@ npm run serve
   - [x] 5_dfs递归解_按字典序输出.c
   - [x] 6_next_permutation.c
   - [x] 7_next_permutation_按字典序输出.cpp
-  - [ ] 8_康托展开问题.c
+  - [ ] 8_康托展开&逆康托展开.md
 
 - 算法题目整理/
   - [x] 求e的值.c
