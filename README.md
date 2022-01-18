@@ -15,7 +15,7 @@
 
 ## docs
 
-- [online](http://liupj.top/ds_algorithm/#/)
+- [online](http://liupj.top/ds-algorithm/#/)
 
 ```sh
 # offline
