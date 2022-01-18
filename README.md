@@ -32,7 +32,7 @@ npm run serve
 
   - C-翁恺-浙大-mooc
 
-  - [C-软一峰](https://wangdoc.com/clang/)
+  - [C-阮一峰](https://wangdoc.com/clang/)
 
   - [C++ 参考手册](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
 
