@@ -48,6 +48,21 @@
 
 ---
 
+#### 补充
+
+> sizeof( ElemType )，根据数据类型获取数据元素所占内存空间的字节数
+
+```c
+#include <stdio.h>
+ 
+int main() {
+  printf("%d\n", sizeof(int)); // 4
+  return 0; 
+}
+```
+
+---
+
 #### C 语言提供的数据类型
 
 - C 语言提供了
@@ -57,6 +72,47 @@
   - 4 种`构造数据类型`：数组、结构体struct、枚举enum、共用体union
 
   - 空类型void、指针
+
+---
+
+#### 补充
+
+[枚举类型的使用 | 菜鸟教程](https://www.runoob.com/cprogramming/c-enum.html)
+
+```c
+#include <stdio.h>
+
+int main() {
+
+  typedef enum { red = 1, green, blue } COLOR;
+  printf("请挑选一个数字输入，你会得到一个好看的颜色: (1，2，3)：");
+  COLOR color;
+  scanf("%u", &color);
+
+  // 输出结果
+  switch (color) {
+    case red:
+			printf("你选中的颜色是红色!\n");
+			break;
+    case green:
+			printf("你选中的颜色是绿色!\n");
+			break;
+    case blue:
+			printf("你选中的颜色是蓝色!\n");
+			break;
+    default:
+			printf("你没选任何颜色\n");
+			break;
+  }
+
+  return 0;
+
+}
+
+// Tips: 相比于单纯使用数字，合理地使用枚举类型可以使得代码的可读性变好～
+```
+
+---
 
 > C 语言还提供了 typedef 关键字，来让开发者自定义数据类型（参考下文抽象数据类型和数据结构的概念来加深理解）
 
