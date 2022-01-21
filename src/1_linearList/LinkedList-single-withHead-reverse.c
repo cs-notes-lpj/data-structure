@@ -15,61 +15,48 @@ typedef struct NODE LNode;
 typedef struct NODE * LinkList;
 /* --------- 定义单链表 --------- */
 
+// utils
+void _printListWithHead(LinkList list);
+
 // 初始化单链表（带头结点）
-LinkList InitList(LinkList * list) {
-  LNode * tmp = (LNode *)malloc(sizeof(LNode));
+LinkList InitList(LinkList* list) {
+  LNode* tmp = (LNode*)malloc(sizeof(LNode));
   if (tmp == NULL) {
     printf("创建头结点失败...\n");
     return NULL;
   }
 
-  tmp->next = NULL;
   (*list) = tmp;
+  tmp->next = NULL;
   return (*list);
 }
 
-// 尾插法建立带头结点的单链表
-LinkList creatListInsertTail(LinkList * list, int data[], int length) {
+// 建立带头结点的单链表（尾插法）
+LinkList creatListInsertTail(LinkList* list, int data[], int length) {
   if (length < 1) {
     return (*list);
   }
 
-  // 实时记录尾结点
-  LNode * tail = (*list);
+  // 用于记录尾结点
+  LNode* tail = (*list);
 
   for (int i = 0; i < length; i ++) {
-    LNode * tmp = (LNode *)malloc(sizeof(LNode));
+    LNode* tmp = (LNode*)malloc(sizeof(LNode));
     if (tmp == NULL) {
       return (*list);
     }
 
     tmp->data = data[i];
-
-    // // 从头结点开始向后遍历寻找当前链表的尾结点
-    // LNode * tail = (*list);
-    // while (tail->next != NULL) {
-    //   tail = tail->next;
-    // }
-
     tmp->next = tail->next;
     tail->next = tmp;
-    tail = tail->next; // 实时更新尾结点
+    tail = tail->next; // 更新尾结点
   }
 
   return (*list);
 }
 
-void PrintList(LinkList list) {
-  LNode * ptr = list->next;
-  while (ptr != NULL) {
-    printf("%d ", ptr->data);
-    ptr = ptr->next;
-  }
-  printf("\n");
-}
-
 // 原地逆序带头结点的单链表（头插法）
-LinkList reverseList(LinkList * list) {
+LinkList reverseList(LinkList* list) {
   if (*list == NULL) {
     printf("逆序单链表失败，你传进来的是个 NULL...\n");
     return (*list);
@@ -85,15 +72,14 @@ LinkList reverseList(LinkList * list) {
     return (*list);
   }
 
-  LNode * ptr = (*list)->next;
-  for (LNode * cur = ptr->next; cur != NULL; cur = ptr->next) {
-    ptr->next = cur->next;     // 断前
-    cur->next = (*list)->next; // 断后
-    (*list)->next = cur;       // 调整头结点的 next 指向
+  LNode* ptr = (*list)->next;
+  for (LNode* ptrNext = ptr->next; ptrNext != NULL; ptrNext = ptr->next) {
+    ptr->next = ptrNext->next;     // 断前
+    ptrNext->next = (*list)->next; // 断后
+    (*list)->next = ptrNext;       // 调整头结点的 next 指向
   }
 
   return (*list);
-
 }
 
 int main () {
@@ -114,11 +100,21 @@ int main () {
 
   L = creatListInsertTail(&L, arr, len);
   printf("恭喜！你创建了一个带头结点的单链表：");
-  PrintList(L);
+  _printListWithHead(L);
   /* ---- 建立带头结点的单链表 ---- */
 
   printf("原地逆序该链表，结果如下...\n");
-  PrintList(reverseList(&L));
+  _printListWithHead(reverseList(&L));
 
   return 0;
+}
+
+/*-- Utils are under below. --*/
+
+// 打印带头结点的单链表
+void _printListWithHead(LinkList list) {
+  for (LNode* ptr = list->next; ptr != NULL; ptr = ptr->next) {
+    printf("%d ", ptr->data);
+  }
+  printf("\n");
 }
