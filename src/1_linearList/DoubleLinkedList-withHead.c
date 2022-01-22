@@ -42,17 +42,14 @@ bool isEmpty(DLinkList list) {
 
 // 遍历输出双链表
 void printDLinkList(DLinkList list) {
-  if (list == NULL) {
+
+  if (list == NULL || list->next == NULL) {
     return;
   }
 
-  DNode * ptr = list->next;
-
-  while (ptr != NULL) {
+  for (DNode* ptr = list->next; ptr != NULL; ptr = ptr->next) {
     printf("%d ", ptr->data);
-    ptr = ptr->next;
   }
-
   printf("\n");
   return;
 }
@@ -73,47 +70,43 @@ bool InsertNextNode(DNode * destPtr, int data) {
   newNode->data = data;
 
   newNode->next = destPtr->next;
-  if (destPtr->next != NULL) {
-    destPtr->next->prior = newNode;
-  }
   destPtr->next = newNode;
   newNode->prior = destPtr;
-
+  if (newNode->next != NULL) {
+    newNode->next->prior = newNode;
+  }
   return true;
-
 }
 
-// 指定结点删除（等价于删其前驱的后继）
-bool DeleteNode(DNode * ptr) {
+// 指定结点删除
+bool DeleteNode(DNode* ptr) {
   if (ptr == NULL) {
     return false;
   }
 
-  DNode * priorPtr = ptr->prior;
-
-  if (priorPtr == NULL) {
+  if (ptr->prior == NULL) {
     printf("不允许删除双链表的头结点，已取消本次删除结点的操作\n");
     return false;
   }
 
+  DNode* priorPtr = ptr->prior;
   priorPtr->next = ptr->next;
   if (ptr->next != NULL) {
     ptr->next->prior = priorPtr;
   }
+
   free(ptr);
-
   return true;
-
 }
 
-// 销毁链表
-bool DestoryDLinkList(DLinkList * list) {
+bool DestoryDLinkList(DLinkList* list) {
   if ((*list) == NULL) {
-    return false;
+    printf("你传进来的是个 NULL 而并非一个带头结点的双链表，已取消本次销毁操作\n");
+    return true;
   }
 
-  // 得保证传进来的指针指向头结点，才能将双链表完全销毁
   if ((*list)->prior != NULL) {
+    printf("得保证传进来的指针指向头结点，才能将双链表完全销毁\n");
     return false;
   }
 
@@ -124,10 +117,10 @@ bool DestoryDLinkList(DLinkList * list) {
 
   // 销毁头结点
   free(*list);
+  // 处理野指针
   (*list) = NULL;
 
   return true;
-
 }
 
 int main() {
@@ -153,8 +146,7 @@ int main() {
   // 销毁链表
   if (DestoryDLinkList(&L)) {
     printf("链表销毁成功\n");
-  };
+  }
   printDLinkList(L);
-
   return 0;
 }
