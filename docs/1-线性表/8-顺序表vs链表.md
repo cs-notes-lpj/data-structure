@@ -84,6 +84,6 @@
 
 所以，结合实际情况，顺序表和链表相比，链表的效率往往较高
 
-（第一章完）
-
 ![image-20220124173222932](https://gitee.com/pj-l/imgs-1/raw/master/screenShot/image-20220124173222932.png)
+
+（第一章：完）
