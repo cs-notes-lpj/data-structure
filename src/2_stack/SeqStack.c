@@ -30,14 +30,15 @@ bool isEmpty(SeqStack s) {
 }
 
 // 入栈
-bool Push(SeqStack * s, int elem) {
-  // 栈满则拒绝进栈
+bool Push(SeqStack* s, int elem) {
+
+  // 栈满则拒绝入栈
   if (s->top == maxSize - 1) {
     return false;
   }
-
-  s->data[s->top + 1] = elem;
-  s->top = s->top + 1;
+  
+  // 入栈
+  s->data[++(s->top)] = elem;
   return true;
 }
 
@@ -56,15 +57,15 @@ void printStack(SeqStack s) {
 }
 
 // 出栈
-bool Pop(SeqStack * s, int * res) {
-  // 栈空，则拒绝出栈
-  if (s->top == -1) {
-    return false;
-  }
+bool Pop(SeqStack* s, int* res) {
 
-  // 出栈是一种逻辑上的操作，实际数据还残留在内存中
-  (*res) = s->data[s->top];
-  s->top = s->top - 1;
+  // 栈空则拒绝出栈
+  if (s->top == -1) {
+		return false;
+  }
+  
+  // 出栈（只是将数据带回后调整栈顶指针，实际上数据还残留在内存中）
+  (*res) = s->data[(s->top)--];
   return true;
 }
 
