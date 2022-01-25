@@ -31,35 +31,33 @@ bool Push(LinkStack * s, int elem) {
 }
 
 void PrintLinkStack(LinkStack s) {
+
   if (s == NULL) {
     return;
   }
 
-  LSNode * ptr = s;
-  while (ptr != NULL) {
+  for (LSNode* ptr = s; ptr != NULL; ptr = ptr->next) {
     printf("%d ", ptr->data);
-    ptr = ptr->next;
   }
   printf("\n");
   return;
 }
 
-bool Pop(LinkStack * s, int * res) {
+// 出栈
+bool Pop(LinkStack* s, int* res) {
+
   // 栈空则拒绝出栈
   if ((*s) == NULL) {
     return false;
   }
 
-  LSNode * tmp = (*s); // 缓存待出栈结点
+  (*res) = (*s)->data;
 
-  /* --- 出栈 --- */
+  LSNode* tmp = *s;
   (*s) = (*s)->next;
-  (*res) = tmp->data;
   free(tmp);
-  /* --- 出栈 --- */
 
   return true;
-
 }
 
 // 读栈顶
