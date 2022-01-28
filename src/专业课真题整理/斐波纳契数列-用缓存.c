@@ -14,6 +14,9 @@
 // 用于缓存斐波那切数列，避免重复计算
 int _cache[100];
 
+// 辅助性工具函数，打印斐波纳契数列
+void _printFib(int num);
+
 int Fibonacci(int Idx) {
   if (Idx == 0 || Idx == 1) {
     return 1;
@@ -31,15 +34,7 @@ int Fibonacci(int Idx) {
   }
 
   // 读取缓存
-  // return Fibonacci(before_one_Idx) + Fibonacci(before_two_Idx);
   return _cache[before_one_Idx] + _cache[before_two_Idx];
-}
-
-void _printFib(int num) {
-  for (int i = 0; i < num; i ++) {
-    printf("%d ", Fibonacci(i));
-  }
-  printf("\n");
 }
 
 int main(void) {
@@ -52,4 +47,13 @@ int main(void) {
   _printFib(num);
 
   return 0;
+}
+
+/*-- Utils are under below. --*/
+
+void _printFib(int num) {
+  for (int i = 0; i < num; i ++) {
+    printf("%d ", Fibonacci(i));
+  }
+  printf("\n");
 }
