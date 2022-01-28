@@ -1,3 +1,0 @@
-- [相关导航]()
-  - [1. [ 笔者的主站点 | 夏与冬的小站 ]](https://liupj.top/)
-  - [2. [ 笔者的工作流 | manjaro-tutorial ]](http://liupj.top/manjaro-tutorial/)
