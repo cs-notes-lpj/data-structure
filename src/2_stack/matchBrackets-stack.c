@@ -3,9 +3,13 @@
 */
 
 #include <stdio.h>
-#define maxSize 10
 typedef enum { false = 0, true } bool;
 
+bool isLeftBrackets(char c);
+bool isMatch(char a, char b);
+
+/*-- 顺序栈 --*/
+#define maxSize 10
 typedef struct {
   char arr[maxSize];
   int top;
@@ -18,6 +22,10 @@ bool InitSeqStack(SeqStack * s) {
     (*s).arr[i] = 0;
   }
   return true;
+}
+
+bool isSeqStackEmpty(SeqStack s) {
+  return (s.top == -1);
 }
 
 bool Push(SeqStack * s, char elem) {
@@ -39,8 +47,62 @@ bool Pop(SeqStack * s, char * res) {
   (*s).top = (*s).top - 1;
   return true;
 }
+/*-- 顺序栈 --*/
 
-// 判断是否为左括号
+bool matchBrackets(char arr[], int len) {
+
+  SeqStack s;
+  InitSeqStack(&s);
+
+  for (int i = 0; i < len; i ++) {
+
+    if (isLeftBrackets(arr[i])) {
+      Push(&s, arr[i]);
+      continue;
+    }
+
+    if (isSeqStackEmpty(s)) {
+      printf("匹配失败，右括号单身...\n");
+      return false;
+    }
+
+    char oldTop;
+    Pop(&s, &oldTop);
+
+    if (isMatch(oldTop, arr[i])) {
+      continue;
+    }
+
+    printf("匹配失败...\n");
+    return false;
+  }
+
+  if (isSeqStackEmpty(s)) {
+    return true;
+  }
+
+  printf("匹配失败，左括号单身...\n");
+  return false;
+}
+
+int main() {
+
+  char arr1[] = {'(', '(', '(', '(', ')', ')', ')', ')'};
+  char arr2[] = {'(', '(', '(', ')', ')', '(', ')', ')'};
+  char arr3[] = {'{', '(', '(', ')', ')', '[', ']', '}'};
+  char arr4[] = {'{', '(', '(', ')', ']', '[', ']', '}'};     // 匹配失败
+  char arr5[] = {'{', '(', '(', ')', ')', '}', ']', '(', ')'};// 右括号单身
+  char arr6[] = {'{', '{', '(', '(', ')', ')', '[', ']', '}'};// 左括号单身
+
+  if (matchBrackets(arr6, sizeof(arr6) / sizeof(char))) {
+    printf("括号匹配！\n");
+  }
+
+  return 0;
+}
+
+/*-- Utils are under below. --*/
+
 bool isLeftBrackets(char c) {
   if (c == '(' || c == '[' || c == '{') {
     return true;
@@ -48,7 +110,6 @@ bool isLeftBrackets(char c) {
   return false;
 }
 
-// 判断两个括号是否匹配成对儿
 bool isMatch(char a, char b) {
   if (a == '(' && b == ')') {
     return true;
@@ -69,79 +130,4 @@ bool isMatch(char a, char b) {
     return true;
   }
   return false;
-}
-
-bool isSeqStackEmpty(SeqStack s) {
-  return (s.top == -1);
-}
-
-bool matchBrackets(char arr[], int len) {
-
-  SeqStack s; InitSeqStack(&s);
-
-  // 开始扫描
-  for (int i = 0; i < len; i ++) {
-    // 如果是左括号
-    if (isLeftBrackets(arr[i])) {
-      Push(&s, arr[i]);
-      continue;
-    } else {
-      // 判断栈空不空
-      if (isSeqStackEmpty(s)) {
-        printf("匹配失败，右括号单身\n");
-        return false;
-      } else {
-
-        // 将括号进行配对
-        char oldTop; Pop(&s, &oldTop);
-        if (isMatch(oldTop, arr[i])) {
-          continue;
-        } else {
-          printf("匹配失败，配对失败\n");
-          return false;
-        }
-
-      }
-    }
-  }
-
-  // 扫描结束，栈空吗
-  if (isSeqStackEmpty(s)) {
-    return true;
-  } else {
-    printf("匹配失败，左括号单身\n");
-    return false;
-  }
-
-}
-
-int main() {
-
-  char arr1[] = {'(', '(', '(', '(', ')', ')', ')', ')'};
-  char arr2[] = {'(', '(', '(', ')', ')', '(', ')', ')'};
-  char arr3[] = {'{', '(', '(', ')', ')', '[', ']', '}'};
-  char arr4[] = {'{', '(', '(', ')', ']', '[', ']', '}'};     // 配对失败
-  char arr5[] = {'{', '(', '(', ')', ')', '}', ']', '(', ')'};// 右括号单身
-  char arr6[] = {'{', '{', '(', '(', ')', ')', '[', ']', '}'};// 左括号单身
-
-  if (matchBrackets(arr1, sizeof(arr1) / sizeof(char))) {
-    printf("括号匹配！\n");
-  }
-  if (matchBrackets(arr2, sizeof(arr2) / sizeof(char))) {
-    printf("括号匹配！\n");
-  }
-  if (matchBrackets(arr3, sizeof(arr3) / sizeof(char))) {
-    printf("括号匹配！\n");
-  }
-  if (matchBrackets(arr4, sizeof(arr4) / sizeof(char))) {
-    printf("括号匹配！\n");
-  }
-  if (matchBrackets(arr5, sizeof(arr5) / sizeof(char))) {
-    printf("括号匹配！\n");
-  }
-  if (matchBrackets(arr6, sizeof(arr6) / sizeof(char))) {
-    printf("括号匹配！\n");
-  }
-
-  return 0;
 }
