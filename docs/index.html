@@ -97,13 +97,16 @@
       search_plugin.style.padding = '0';
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    let DOMContentLoadedHandler = () => {
       let app_name = document.getElementsByClassName('app-name')[0],
           search_plugin = document.getElementsByClassName('search')[0];
 
       search_plugin.parentNode.insertBefore(app_name, search_plugin);
       _modifyCSS(app_name, search_plugin);
-    }, false);
+    }
+
+    document.addEventListener('DOMContentLoaded', DOMContentLoadedHandler, false);
+
   </script>
 
 </body>
