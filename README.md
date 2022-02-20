@@ -149,6 +149,7 @@ npm run serve
 
 - 查找算法：8_find/
   - [x] 二分查找：erFenChaZhao.c
+  - [ ] 插值查找：chaZhiChaZhao.c
 
 - 排序算法：9_sort/
   - [x] 直接插入排序：insertSort.c
