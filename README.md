@@ -1,84 +1,89 @@
-<div align="center">
+## 数据结构与算法的学习记录
 
-# 数据结构与算法的代码实现
+http://liupj.top/ds-algorithm/
 
-<a href="https://liupj.top/about" target="_blank">
-  <img src="https://img.shields.io/badge/author-Lpj-000000.svg?style=flat-square&logo=GitHub">
-</a>
-<a href="https://github.com/Brannua/ds_algorithm/blob/master/LICENSE" target="_blank">
-  <img src="https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square">
-</a>
+主要学习自王道考研
 
-</div>
+浙大翁恺老师 & 青岛大学王卓老师的公开课也提供了帮助
 
-> 如果这个仓库对你有帮助，记得点个 star 🌟 哈，让我们一起向更优秀的 programmer 🏅 前进 ！
+致谢 ！
 
-## docs
+#### 一点感悟
 
-- [online](http://liupj.top/ds-algorithm/#/)
+1. 如果不是专门考你排序算法，那就只关注解题的算法逻辑就 ok 了，需要排序的时候调用一下 C++ 的`sort`函数就 ok 了，简单高效
 
-```sh
-# offline
+2. 递归：想递推、想出口、注意防范栈溢出
+
+3. 贪心算法求得的解未必最优，多用动态规划求最优解
+
+4. 所谓动态规划的思想，就是（将大问题分步 => 每一步看成一个状态 => 寻找状态转移方程）~咋这么像状态机呢我去~
+
+5. 对于中缀表达式 => 后缀表达式（逆波兰式）
+
+```
+// 2_stack/normal-2-reverse-polish-notation.c
+
+目前只支持操作数是个位数
+  输入：((5/(7-(1+1)))*3)-(2+(1+1))
+  输出：5 7 1 1 + - / 3 * 2 1 1 + + -
+
+待尝试操作数有多位数的情况
+  输入：((15/(7-(1+1)))*3)-(2+(1+1))
+  输出：15 7 1 1 + - / 3 * 2 1 1 + + -
+
+有几种思路：
+  1. 用单链表存，而不用数组存
+  2. 建立表达式树，然后中序遍历
+  3. 字符转整型，统一用 ascii 码存；即 int 数组
+  4. 将 12 存成 '1' 和 '2', 统一用 char 型数组存，只不过在数组中添加空格，用来分割操作数和操作符
+  5. 用指针型数组，即数组元素都是一个个的地址，这些地址有可能指向的是数，有可能指向的是字符
+```
+
+#### 代码细节
+
+> `<string.h>`中有不安全的 API，应避免使用，如下
+
+```c
+// not safe
+char * strcpy(char * restrict dst, const char * restrict src);
+char * strcat(char * restrict s1, const char * restrict s2);
+
+/*
+  不安全的原因：
+
+    目的地可能没有充足的空间 ！
+
+  解决办法：
+  
+    根据目的地的剩余空间大小，定义新参数，用来限制最多能够拷贝的字符数 ！
+*/
+
+// safe
+char * strncpy(char * restrict dst, const char * restrict src, size_t n);
+char * strncat(char * restrict s1, const char * restrict s2, size_t n);
+```
+
+#### 本地开发
+
+> 注意：编译引用了头文件`<math.h>`的源代码文件，应使用`-lm`编译选项
+
+```bash
 npm run serve
 ```
 
-## 其他总结 & 参考
+#### 其它文档
 
-- [编码语法基础](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
+- [C/C++ 语法基础 - 天勤](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
+
+- [C++ 参考手册](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
 
 - [用 cin.getline() 取代 gets()](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
 
-- 参考了
+- [《算法笔记》](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
 
-  - C-翁恺-浙大-mooc
+#### 已实现的数据结构与算法
 
-  - [C-阮一峰](https://wangdoc.com/clang/)
-
-  - [C++ 参考手册](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
-
-  - 数据结构与算法-王道-mooc
-
-  - 数据结构与算法-天勤-腾讯课堂
-
-  - 数据结构与算法-王卓-青岛大学-bilibili
-
-  - [算法笔记](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
-
-## 算法思想小结
-
-- 递归思想
-  - 想出口
-  - 想递推
-  - 注意但凡递归均可能 「栈溢出」
-
-- 贪心算法不一定是最优解，可采用动态规划找最优解
-
-- 动态规划思想
-  - 将问题的求解划分为多个阶段，阶段之间有某种递进关系（所谓的状态转移方程）
-
-- 不同算法思想可以结合使用，比如求解 0-1 背包问题时，动态规划思想所谓的状态转移方程其实就是递归的递推式
-
-## 库函数使用注意事项
-
-- 将主要精力放在题目的逻辑本身，题目中的某一步需要排序时，直接调用 C++ 的 ```sort``` 函数
-
-- <string.h>
-  - 以下两函数 「不安全」，应避免使用
-    - ```char * strcpy(char *restrict dst, const char *restrict src);```
-    - ```char * strcat(char *restrict s1, const char *restrict s2);```
-  - 原因：目的地可能没有充足的空间；安全的替代品如下
-    - ```char * strncpy(char *restrict dst, const char *restrict src, size_t n);```
-    - ```char * strncat(char *restrict s1, const char *restrict s2, size_t n);```
-  - 解释：新参数 ```size_t n``` 用来限制 「最多」 能够拷贝多少字符，即目的地还有多少空间可用
-  - 更多关于 <string.h> 的知识参见自己的 .md 笔记总结
-
-- <math.h>
-  - 编译需添加 ```-lm``` 参数，否则可能报 ```undefined reference``` 的错误
-  - 如 ```pow``` 函数
-
-## 已实现的数据结构与算法
-
-> In /src
+> In src
 
 - 线性表：1_linearList/
   - 顺序表
@@ -228,25 +233,4 @@ npm run serve
   - [x] 输入一个n阶矩阵，输出每一列的最大值的和.c
   - [x] 找出数组中任意一个重复的数字.c
 
-## todo
-
-- [ ] 对于中缀表达式 => 后缀表达式（逆波兰式）
-
-```txt
-// 2_stack/normal-2-reverse-polish-notation.c
-
-目前只支持操作数是个位数
-  输入：((5/(7-(1+1)))*3)-(2+(1+1))
-  输出：5 7 1 1 + - / 3 * 2 1 1 + + -
-
-待尝试操作数有多位数的情况
-  输入：((15/(7-(1+1)))*3)-(2+(1+1))
-  输出：15 7 1 1 + - / 3 * 2 1 1 + + -
-
-有几种思路：
-  1. 用单链表存，而不用数组存
-  2. 建立表达式树，然后中序遍历
-  3. 字符转整型，统一用 ascii 码存；即 int 数组
-  4. 将 12 存成 '1' 和 '2', 统一用 char 型数组存，只不过在数组中添加空格，用来分割操作数和操作符
-  5. 用指针型数组，即数组元素都是一个个的地址，这些地址有可能指向的是数，有可能指向的是字符
-```
+> 如果你觉得本仓库还不错的话，可以点击右上角的 star，感谢 🙏🏻
