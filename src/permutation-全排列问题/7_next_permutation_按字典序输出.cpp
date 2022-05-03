@@ -1,5 +1,5 @@
 #include <cstdio>
-#include <algorithm> // 为了用 sort 函数，也正是因此才改成了 .cpp 文件
+#include <algorithm> // 为了用 sort 函数，所以改成了 .cpp
 
 void _swap(int* a, int* b);
 void _reverse(int arr[], int begin, int end);
