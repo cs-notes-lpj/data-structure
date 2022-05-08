@@ -1,5 +1,5 @@
 
-#### 注意事项
+## 注意事项
 
 1. 对于引用了头文件`<math.h>`的源代码文件，编译时应使用`-lm`编译选项
 
@@ -25,7 +25,7 @@ char * strncpy(char * restrict dst, const char * restrict src, size_t n);
 char * strncat(char * restrict s1, const char * restrict s2, size_t n);
 ```
 
-#### 数据结构
+## 数据结构
 
 - 线性表：1_linearList/
   - 顺序表
@@ -94,7 +94,7 @@ char * strncat(char * restrict s1, const char * restrict s2, size_t n);
 - 堆：7_heap/
   - [x] 将完全二叉树自底向上调整为大根堆_&_基于大根堆的堆排序.c（逻辑视角_大根堆的构建，存储视角_基于大根堆的堆排序）
 
-#### 算法
+## 算法
 
 - 数组的传参方式/
   - [x] 一维数组的传参方式.c
@@ -179,3 +179,4 @@ char * strncat(char * restrict s1, const char * restrict s2, size_t n);
   - [x] 找出数组中任意一个重复的数字.c
 
 <!-- To be continued ... -->
+
