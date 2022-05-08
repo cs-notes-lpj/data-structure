@@ -1,46 +1,9 @@
 
-#### 致谢
+#### 注意事项
 
-1. 王道考研
+1. 对于引用了头文件`<math.h>`的源代码文件，编译时应使用`-lm`编译选项
 
-2. 浙大翁恺老师
-
-3. 青岛大学王卓老师
-
-#### 一点感悟
-
-1. 如果不是专门考你排序算法，那就只关注解题的算法逻辑就 ok 了，需要排序的时候调用一下 C++ 的`sort`函数就 ok 了，简单高效
-
-2. 递归：想递推、想出口、注意防范栈溢出
-
-3. 贪心算法求得的解未必最优，多用动态规划求最优解
-
-4. 所谓动态规划的思想，就是（将大问题分步 => 每一步看成一个状态 => 寻找状态转移方程）~咋这么像状态机呢我去~（你面前的计算机不就是个状态机嘛）
-
-5. 对于中缀表达式 => 后缀表达式（逆波兰式）
-
-```
-// 2_stack/normal-2-reverse-polish-notation.c
-
-目前只支持操作数是个位数
-  输入：((5/(7-(1+1)))*3)-(2+(1+1))
-  输出：5 7 1 1 + - / 3 * 2 1 1 + + -
-
-待尝试操作数有多位数的情况
-  输入：((15/(7-(1+1)))*3)-(2+(1+1))
-  输出：15 7 1 1 + - / 3 * 2 1 1 + + -
-
-有几种思路：
-  1. 用单链表存，而不用数组存
-  2. 建立表达式树，然后中序遍历
-  3. 字符转整型，统一用 ascii 码存；即 int 数组
-  4. 将 12 存成 '1' 和 '2', 统一用 char 型数组存，只不过在数组中添加空格，用来分割操作数和操作符
-  5. 用指针型数组，即数组元素都是一个个的地址，这些地址有可能指向的是数，有可能指向的是字符
-```
-
-#### 代码细节
-
-> `<string.h>`中有不安全的 API，应避免使用，如下
+2. `<string.h>`中有不安全的 API，应避免使用，如下
 
 ```c
 // not safe
@@ -61,24 +24,6 @@ char * strcat(char * restrict s1, const char * restrict s2);
 char * strncpy(char * restrict dst, const char * restrict src, size_t n);
 char * strncat(char * restrict s1, const char * restrict s2, size_t n);
 ```
-
-#### 本地开发
-
-```bash
-npm run serve
-```
-
-> 注意：编译引用了头文件`<math.h>`的源代码文件，应使用`-lm`编译选项
-
-#### 其它文档
-
-- [C/C++ 语法基础 - 天勤](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
-
-- [C++ 参考手册](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
-
-- [用 cin.getline() 取代 gets()](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
-
-- [《算法笔记》](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
 
 #### 数据结构
 
@@ -232,3 +177,5 @@ npm run serve
   - [x] 任意输入4个数，由大到小输出它们.c
   - [x] 输入一个n阶矩阵，输出每一列的最大值的和.c
   - [x] 找出数组中任意一个重复的数字.c
+
+<!-- To be continued ... -->
