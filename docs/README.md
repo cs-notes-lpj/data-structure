@@ -1,4 +1,4 @@
-#### 关于
+## 关于
 
 为了回顾总结我在本科期间学习的 「数据结构与算法」 课程，我建立了本站
 
@@ -6,7 +6,7 @@
 
 练习的代码都存放在了[这里](https://github.com/Brannua/data-structure/tree/master/src)
 
-#### 其它文档
+## 其它文档
 
 - [C/C++ 语法基础 - 天勤](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
 
@@ -16,7 +16,7 @@
 
 - [《算法笔记》](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
 
-#### 交流方式
+## 交流方式
 
 如果你对本站中的内容有疑问，欢迎发送邮件到
 
@@ -26,10 +26,10 @@
 
 期待来信
 
-#### 致谢
+## 致谢
 
-1. 王道考研
+- 王道考研
 
-2. 浙大翁恺老师
+- 浙江大学翁恺老师
 
-3. 青岛大学王卓老师
+- 青岛大学王卓老师
