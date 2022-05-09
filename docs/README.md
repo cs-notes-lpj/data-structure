@@ -6,15 +6,15 @@
 
 练习的代码都存放在了[这里](https://github.com/Brannua/data-structure/tree/master/src)
 
-## 其它文档
+## 可能用到的文档
 
-- [C/C++ 语法基础 - 天勤](https://zir7ybc667.feishu.cn/docs/doccnFK2tBJmocV4BCGkGzeFEXe)
+[c 笔记总结](https://liupj.top/categories/C/)
 
-- [C++ 参考手册](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
+[算法笔记](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
 
-- [用 cin.getline() 取代 gets()](https://zir7ybc667.feishu.cn/docs/doccnYC1giupn3EXvJRbctmSdOh)
+[c reference](https://en.cppreference.com/w/c)
 
-- [《算法笔记》](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
+[c++ reference](https://en.cppreference.com/w/cpp)
 
 ## 交流方式
 
