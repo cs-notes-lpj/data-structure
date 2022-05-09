@@ -1,12 +1,12 @@
 #### 概览
 
-<img src="https://aliyun-oss-lpj.oss-cn-qingdao.aliyuncs.com/images/old-from-gitee-2022-03-25/by-picgo/image-20211011115610817.png"></img>
+![image-20211011115610817](https://aliyun-oss-lpj.oss-cn-qingdao.aliyuncs.com/images/by-picgo/image-20211011115610817.png)
 
 #### 开放式问题的答题思路
 
 > 注意要逻辑清晰，最后给出结论 ！
 
-![image-20220124170404644](https://aliyun-oss-lpj.oss-cn-qingdao.aliyuncs.com/images/old-from-gitee-2022-03-25/by-picgo/image-20220124170404644.png)
+![image-20220124170404644](https://aliyun-oss-lpj.oss-cn-qingdao.aliyuncs.com/images/by-picgo/image-20220124170404644.png)
 
 ---
 
@@ -84,6 +84,6 @@
 
 所以，结合实际情况，顺序表和链表相比，链表的效率往往较高
 
-![image-20220124173222932](https://aliyun-oss-lpj.oss-cn-qingdao.aliyuncs.com/images/old-from-gitee-2022-03-25/by-picgo/image-20220124173222932.png)
+![image-20220124173222932](https://aliyun-oss-lpj.oss-cn-qingdao.aliyuncs.com/images/by-picgo/image-20220124173222932.png)
 
 （第一章：完）
