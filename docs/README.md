@@ -6,16 +6,6 @@
 
 练习的代码都存放在了[这里](https://github.com/Brannua/data-structure/tree/master/src)
 
-## 可能用到的文档
-
-[c 笔记总结](https://liupj.top/categories/C/)
-
-[算法笔记](https://zir7ybc667.feishu.cn/file/boxcnDdo3iqbVHyoubYA7AISyNb)
-
-[c reference](https://en.cppreference.com/w/c)
-
-[c++ reference](https://en.cppreference.com/w/cpp)
-
 ## 交流方式
 
 如果你对本站中的内容有疑问，欢迎发送邮件到
@@ -28,8 +18,8 @@
 
 ## 致谢
 
-- 王道考研
+王道考研
 
-- 浙江大学翁恺老师
+浙江大学翁恺老师
 
-- 青岛大学王卓老师
+青岛大学王卓老师
