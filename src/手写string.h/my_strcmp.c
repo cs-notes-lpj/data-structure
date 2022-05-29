@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * 函数原型
+ * int strcmp(const char * s_1, const char * s_2);
+ * 用途：比较两个字符串
+ *      s_1 == s_2 => 0
+ *      s_1 > s_2  => 正
+ *      s_1 < s_2  => 负
+ */
+
 int my_strcmp(const char * s_1, const char * s_2) {
 
   // int _idx = 0;
