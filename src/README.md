@@ -106,6 +106,7 @@ char * strncat(char * restrict s1, const char * restrict s2, size_t n);
   - [x] my_strcmp.c
   - [x] my_strcpy.c
   - [x] my_strcat.c
+  - [x] README.md 拓展知识（包括字符串的截取）
 
 - 查找算法：8_find/
   - [x] 二分查找：erFenChaZhao.c
