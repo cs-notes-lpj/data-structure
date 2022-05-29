@@ -3,7 +3,9 @@
 
 1. 对于引用了头文件`<math.h>`的源代码文件，编译时应使用`-lm`编译选项
 
-2. `<string.h>`中有不安全的 API，应避免使用，如下
+2. 非排序类算法题目，为了专注于解题逻辑，故使用 C++ 语言中的库函数 [sort](https://en.cppreference.com/w/cpp/algorithm/sort)
+
+3. `<string.h>`中有不安全的 API，应避免使用，如下
 
 ```c
 // not safe
