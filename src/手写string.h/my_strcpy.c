@@ -2,7 +2,13 @@
 #include <string.h>
 #include <stdlib.h>
 
-// 注意：'\0' 也拷贝了
+/**
+ * 函数原型:      char * strcpy(char *restrict dst, const char *restrict src);
+ * 用途:         把 src 指向的字符串拷贝到 dst 指向的字符串（'\0' 也会被拷贝）
+ * 期望返回值:    指针 dst，故函数返回值类型为 char *
+ * 注意:         restrict 关键字，用于限制 src 和 dst 所指向的字符串不能有重叠（from C99）
+ */
+
 char * my_strcpy(char *restrict dst, const char *restrict src) {
 
   while ( 1 ) {
