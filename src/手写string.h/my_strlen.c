@@ -2,9 +2,8 @@
 #include <string.h>
 
 /**
- * 函数原型
- * size_t strlen(const char * s);
- * 用途：计算 s 指向的字符串的长度「不包括结尾的 '\0'，故比使用 sizeof 计算少 1」！
+ * 函数原型: size_t strlen(const char * s);
+ * 用途:    计算 s 指向的字符串的长度「不包括结尾的 '\0'，故比使用 sizeof 计算少 1」！
  */
 
 size_t my_strlen(const char * s) {
